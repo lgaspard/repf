@@ -1,6 +1,19 @@
 ## Solar Power Forecasting
 
-TDB
+Two scripts can be executed to get an estimation of the solar power that will be produced tomorrow in the province of Liège:
+
+- `solar_panelwise.py`: **estimate tomorrow's production** by computing a power curve for each panel installation detected by our panel enumerator.
+- `solar_provincial.py`: **estimate tomorrow's production** by computing a power curve directly for the whole province, using Elia's production measurements for the past 7 days to build a posterior predictive model.
+
+Both caches present in the computational flow can be updated using the following scripts:
+
+|                Cache | Script to use          |
+| -------------------: | ---------------------- |
+| SOLAR POWER MEASURES | `cache/power.py`       |
+|  IRRADIANCE MEASURES | `cache/cache_solar.py` |
+| IRRADIANCE FORECASTS | `cache/cache_solar.py` |
+
+
 
 ## Wind Power Forecasting
 
