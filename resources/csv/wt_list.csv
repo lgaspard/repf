@@ -1,0 +1,401 @@
+id,power_plant,code_cwape,operator,location,nominal_power,lat,lon,brand,type,state
+Amel,Amel,250,ASPIRAVI,Amblève (Amel),2,50.34933,6.215867,Enercon,E82,En fonction
+Amel1,Amel,250,ASPIRAVI,Amblève (Amel),2,50.348528,6.219884,Enercon,E82,En fonction
+Amel2,Amel,250,ASPIRAVI,Amblève (Amel),2,50.347087,6.223383,Enercon,E82,En fonction
+Amel3,Amel,250,ASPIRAVI,Amblève (Amel),2,50.345434,6.226664,Enercon,E82,En fonction
+Amel4,Amel,250,ASPIRAVI,Amblève (Amel),2,50.34355,6.229724,Enercon,E82,En fonction
+Arlon - Messancy,Arlon - Messancy,9483,ENECO WIND BELGIUM,Messancy (Hondelange),2,49.631434,5.867019,Senvion,MM100,En fonction
+Arlon - Messancy1,Arlon - Messancy,9483,ENECO WIND BELGIUM,Messancy (Hondelange),2,49.634511,5.865468,Senvion,MM100,En fonction
+Arlon - Messancy2,Arlon - Messancy,9483,ENECO WIND BELGIUM,Messancy (Hondelange),2,49.636794,5.863517,Senvion,MM100,En fonction
+Arlon - Messancy3,Arlon - Messancy,9525,Eoliennes de Lorraine,Messancy (Hondelange),2,49.634499,5.854017,Senvion,MM100,En fonction
+Arlon - Messancy4,Arlon - Messancy,9525,Eoliennes de Lorraine,Messancy (Hondelange),2,49.636551,5.851837,Senvion,MM100,En fonction
+Arlon - Messancy5,Arlon - Messancy,9079,Vents d'Autlebas,Messancy (Hondelange) (extension),2,49.637994,5.874853,Senvion,MM100,En fonction
+Assesse,Assesse,0,Eoliennes de la Fagne,Assesse,0.8,50.36505,5.047937,Enercon,E53,En Construction
+Assesse1,Assesse,0,Eoliennes de la Fagne,Assesse,0.8,50.364165,5.049546,Enercon,E53,En Construction
+Assesse2,Assesse,0,Eoliennes de la Fagne,Assesse,0.8,50.362387,5.046461,Enercon,E53,En Construction
+Bastogne - Vaux sur sure,Bastogne - Vaux sur sure,3786,ELICIO,Villeroux - Vaux s/ Sure,2,49.989232,5.658765,Enercon,E82,En fonction
+Bastogne - Vaux sur sure1,Bastogne - Vaux sur sure,3786,ELICIO,Villeroux - Vaux s/ Sure,2,49.985669,5.660496,Enercon,E82,En fonction
+Bastogne - Vaux sur sure2,Bastogne - Vaux sur sure,3786,ELICIO,Villeroux - Vaux s/ Sure,2,49.982836,5.665328,Enercon,E82,En fonction
+Bastogne - Vaux sur sure3,Bastogne - Vaux sur sure,5713,ASPIRAVI,Villeroux - Vaux s/ Sure,2,49.994048,5.671811,Enercon,E82,En fonction
+Bastogne - Vaux sur sure4,Bastogne - Vaux sur sure,5713,ASPIRAVI,Villeroux - Vaux s/ Sure,2,49.992647,5.664534,Enercon,E82,En fonction
+Bastogne - Vaux sur sure5,Bastogne - Vaux sur sure,5713,ASPIRAVI,Villeroux - Vaux s/ Sure,2,49.98769,5.669462,Enercon,E82,En fonction
+Beaumont,Beaumont,0,GESTAMP,BEAUMONT-Froidchapelle (2),2,50.217722,4.305585,Senvion,MM92,En fonction
+Beaumont1,Beaumont,0,GESTAMP,BEAUMONT-Froidchapelle (2),2,50.212931,4.306909,Senvion,MM92,En fonction
+Beaumont2,Beaumont,0,GESTAMP,BEAUMONT-Froidchapelle (2),2,50.209559,4.307179,Senvion,MM92,En fonction
+Beaumont3,Beaumont,0,GESTAMP,BEAUMONT-Froidchapelle (2),2,50.206369,4.310293,Senvion,MM92,En fonction
+Beaumont4,Beaumont,0,GESTAMP,BEAUMONT-Froidchapelle (2),2,50.210508,4.31655,Senvion,MM92,En fonction
+Beaumont5,Beaumont,0,GESTAMP,BEAUMONT-Froidchapelle (2),2,50.203211,4.32415,Senvion,MM92,En fonction
+Berloz,Berloz,7055,EDF LUMINUS,Berloz,2,50.69819,5.193557,Vestas,V90,En fonction
+Berloz1,Berloz,7055,EDF LUMINUS,Berloz,2,50.697281,5.187341,Vestas,V90,En fonction
+Berloz2,Berloz,7055,EDF LUMINUS,Berloz,2,50.696246,5.179793,Vestas,V90,En fonction
+Berloz3,Berloz,0,None,Berloz extension (+ Geer),2.5,50.69403,5.19456,Gamesa,G114,En fonction
+Berloz4,Berloz,0,None,Berloz extension (+ Geer),2.5,50.692381,5.188615,Gamesa,G114,En fonction
+Berloz5,Berloz,0,None,Berloz extension (+ Geer),2.5,50.690797,5.182487,Gamesa,G114,En fonction
+Berloz6,Berloz,9562,EDF LUMINUS,Berloz extension (+ Geer),2.5,50.694047,5.194589,Gamesa,G114,En fonction
+Berloz7,Berloz,9562,EDF LUMINUS,Berloz extension (+ Geer),2.5,50.692399,5.188601,Gamesa,G114,En fonction
+Berloz8,Berloz,9562,EDF LUMINUS,Berloz extension (+ Geer),2.5,50.69085,5.182559,Gamesa,G114,En fonction
+Berloz9,Berloz,9572,EDF LUMINUS,Berloz extension (+ Geer),2.5,50.684576,5.190078,Gamesa,G114,En fonction
+Bièvre,Bièvre,7999,EDF LUMINUS,Bièvre 2,2,49.95633,5.010297,Vestas,V90,En fonction
+Bièvre1,Bièvre,7999,EDF LUMINUS,Bièvre 2,2,49.953822,5.013483,Vestas,V90,En fonction
+Bièvre2,Bièvre,7999,EDF LUMINUS,Bièvre 2,2,49.9528,5.016033,Vestas,V90,En fonction
+Bièvre3,Bièvre,7999,EDF LUMINUS,Bièvre 2,2,49.953248,5.019537,Vestas,V90,En fonction
+Bièvre4,Bièvre,7999,EDF LUMINUS,Bièvre 2,2,49.953461,5.023288,Vestas,V90,En fonction
+Bièvre5,Bièvre,7999,EDF LUMINUS,Bièvre 2,2,49.956007,5.032312,Vestas,V90,En fonction
+Bièvre6,Bièvre,7999,EDF LUMINUS,Bièvre 2,2,49.954693,5.027918,Vestas,V90,En fonction
+Bourcy,Bourcy,7987,RPC,Bastogne- Bourcy,2.5,50.063971,5.780178,Fuhrlander,FL 2500 2500kW,En fonction
+Bourcy1,Bourcy,7987,RPC,Bastogne- Bourcy,2.5,50.061892,5.784712,Fuhrlander,FL 2500 2500kW,En fonction
+Bourcy2,Bourcy,7987,RPC,Bastogne- Bourcy,2.5,50.058935,5.788955,Fuhrlander,FL 2500 2500kW,En fonction
+Bourcy3,Bourcy,7987,RPC,Bastogne- Bourcy,2.5,50.055949,5.792679,Fuhrlander,FL 2500 2500kW,En fonction
+Bourcy4,Bourcy,7987,RPC,Bastogne- Bourcy,2.5,50.051252,5.797273,Fuhrlander,FL 2500 2500kW,En fonction
+Bourcy5,Bourcy,7987,RPC,Bastogne- Bourcy,2.5,50.047993,5.790291,Fuhrlander,FL 2500 2500kW,En fonction
+Bourcy6,Bourcy,7987,RPC,Bastogne- Bourcy,2.5,50.042352,5.783212,Fuhrlander,FL 2500 2500kW,En fonction
+Bronromme,Bronromme,117,A+Energies,Theux,0.33,50.442978,5.803877,Enercon,E33,En fonction
+Büllingen,Büllingen,7906,Engie Electrabel,Bullange,2,50.398716,6.318911,Vestas,V80,En fonction
+Büllingen1,Büllingen,7906,Engie Electrabel,Bullange,2,50.395701,6.321742,Vestas,V80,En fonction
+Büllingen2,Büllingen,7906,Engie Electrabel,Bullange,2,50.393095,6.323239,Vestas,V80,En fonction
+Büllingen3,Büllingen,7906,Engie Electrabel,Bullange,2,50.390917,6.32547,Vestas,V80,En fonction
+Büllingen4,Büllingen,7906,Engie Electrabel,Bullange,2,50.392812,6.31812,Vestas,V80,En fonction
+Büllingen5,Büllingen,7906,Engie Electrabel,Bullange,2,50.39013,6.320387,Vestas,V80,En fonction
+Bütgenbach,Bütgenbach,70,Engie Electrabel,Bütgenbach,2,50.448093,6.239422,Vestas,V80,En fonction
+Bütgenbach1,Bütgenbach,70,Engie Electrabel,Bütgenbach,2,50.447234,6.241966,Vestas,V80,En fonction
+Bütgenbach2,Bütgenbach,70,Engie Electrabel,Bütgenbach,2,50.446188,6.244924,Vestas,V80,En fonction
+Bütgenbach3,Bütgenbach,70,Engie Electrabel,Bütgenbach,2,50.442555,6.240978,Vestas,V80,En fonction
+Cerfontaine,Cerfontaine,3028,GREEN WIND,Cerfontaine,2,50.180534,4.505259,Vestas,V90,En fonction
+Cerfontaine1,Cerfontaine,3028,GREEN WIND,Cerfontaine,2,50.179319,4.499264,Vestas,V90,En fonction
+Cerfontaine10,Cerfontaine,3028,GREEN WIND,Cerfontaine,2,50.169545,4.483083,Vestas,V90,En fonction
+Cerfontaine2,Cerfontaine,3028,GREEN WIND,Cerfontaine,2,50.177264,4.48663,Vestas,V90,En fonction
+Cerfontaine3,Cerfontaine,3028,GREEN WIND,Cerfontaine,2,50.178552,4.492961,Vestas,V90,En fonction
+Cerfontaine4,Cerfontaine,3028,GREEN WIND,Cerfontaine,2,50.175017,4.503045,Vestas,V90,En fonction
+Cerfontaine5,Cerfontaine,3028,GREEN WIND,Cerfontaine,2,50.17452,4.496702,Vestas,V90,En fonction
+Cerfontaine6,Cerfontaine,3028,GREEN WIND,Cerfontaine,2,50.17397,4.490471,Vestas,V90,En fonction
+Cerfontaine7,Cerfontaine,3028,GREEN WIND,Cerfontaine,2,50.17341,4.484212,Vestas,V90,En fonction
+Cerfontaine8,Cerfontaine,3028,GREEN WIND,Cerfontaine,2,50.171881,4.501007,Vestas,V90,En fonction
+Cerfontaine9,Cerfontaine,3028,GREEN WIND,Cerfontaine,2,50.169997,4.489341,Vestas,V90,En fonction
+Chevetogne,Chevetogne,180,ENERGIE 2030,Chevetogne,0.8,50.255055,5.159713,Enercon,E48,En fonction
+Chimay,Chimay,3027,GREEN WIND,Baileux (1),2.5,50.043212,4.377039,GE,GE 2.5,En fonction
+Chimay1,Chimay,3027,GREEN WIND,Baileux (1),2.5,50.042483,4.384173,GE,GE 2.5,En fonction
+Chimay2,Chimay,3027,GREEN WIND,Baileux (1),2.5,50.047014,4.386506,GE,GE 2.5,En fonction
+Chimay3,Chimay,3027,GREEN WIND,Baileux (1),2.5,50.047285,4.379707,GE,GE 2.5,En fonction
+Chimay4,Chimay,3027,GREEN WIND,Baileux (2) bis,2.5,50.049596,4.373592,GE,GE 2.5,En fonction
+Chimay5,Chimay,3027,GREEN WIND,Baileux (2) bis,2.5,50.045298,4.357089,GE,GE 2.5,En fonction
+Chimay6,Chimay,3027,GREEN WIND,Baileux (2) bis,2.75,50.044355,4.36876,GE,GE 2.75,En fonction
+Chimay7,Chimay,3027,GREEN WIND,Baileux (2) bis,2.75,50.04199,4.362129,GE,GE 2.75,En fonction
+Chimay8,Chimay,3027,GREEN WIND,Baileux (2) bis,2.75,50.03914,4.369528,GE,GE 2.75,En fonction
+Ciney - Pessoux,Ciney - Pessoux,8276,Solano Wind,Ciney - Pessoux,2.5,50.298356,5.176506,Nordex,N 100,En fonction
+Ciney - Pessoux1,Ciney - Pessoux,8276,Solano Wind,Ciney - Pessoux,2.5,50.298281,5.18466,Nordex,N 100,En fonction
+Ciney - Pessoux2,Ciney - Pessoux,8276,Solano Wind,Ciney - Pessoux,2.5,50.297561,5.191188,Nordex,N 100,En fonction
+Ciney - Pessoux3,Ciney - Pessoux,8276,Solano Wind,Ciney - Pessoux,2.5,50.295264,5.176453,Nordex,N 100,En fonction
+Ciney - Pessoux4,Ciney - Pessoux,8276,Solano Wind,Ciney - Pessoux,2.5,50.294865,5.182005,Nordex,N 100,En fonction
+Ciney - Pessoux5,Ciney - Pessoux,8276,Solano Wind,Ciney - Pessoux,2.5,50.293653,5.188187,Nordex,N 100,En fonction
+Ciney - Sovet,Ciney - Sovet,8013,EDF LUMINUS,Ciney- Sovet,3.375,50.289084,5.06036,Senvion,3.4M,En fonction
+Ciney - Sovet1,Ciney - Sovet,8013,EDF LUMINUS,Ciney- Sovet,3.375,50.282312,5.065173,Senvion,3.4M,En fonction
+Ciney - Sovet2,Ciney - Sovet,8013,EDF LUMINUS,Ciney- Sovet,3.375,50.28702,5.055082,Senvion,3.4M,En fonction
+Ciney - Sovet3,Ciney - Sovet,8009,EDF LUMINUS,Ciney- Sovet,3.375,50.278982,5.053591,Senvion,3.4M,En fonction
+Ciney - Sovet4,Ciney - Sovet,8009,EDF LUMINUS,Ciney- Sovet,3.375,50.284631,5.050206,Senvion,3.4M,En fonction
+Ciney - Sovet5,Ciney - Sovet,8009,EDF LUMINUS,Ciney- Sovet,3.375,50.276598,5.046303,Senvion,3.4M,En fonction
+Ciney - Sovet6,Ciney - Sovet,0,EDF LUMINUS,Ciney - Sovet 2,3.2,50.281679,5.058232,Senvion,MM114,En fonction
+Ciney - Sovet7,Ciney - Sovet,0,EDF LUMINUS,Ciney - Sovet 3,2.2,50.27442,5.03742,Vestas,V100,En fonction
+Couvin,Couvin,146,FLEXIRIS,Boussu-en-Fagne (1),2,50.038542,4.492036,Enercon,E82,En fonction
+Dinant - Falmagne,Dinant - Falmagne,0,None,Falmagne - parc JADE CHAROUK,2.3,50.191861,4.879995,Enercon,E92,En fonction
+Dinant - Falmagne1,Dinant - Falmagne,0,None,Falmagne - parc JADE CHAROUK,2.3,50.186037,4.877552,Enercon,E92,En fonction
+Dinant - Falmagne2,Dinant - Falmagne,0,None,Falmagne - parc JADE CHAROUK,2.3,50.184219,4.888062,Enercon,E92,En fonction
+Dinant - Falmagne3,Dinant - Falmagne,0,None,Falmagne - parc JADE CHAROUK,2.3,50.182128,4.877062,Enercon,E92,En fonction
+Dinant - Yvoir,Dinant - Yvoir,163,EDF LUMINUS,Yvoir- Dinant,2,50.304573,4.974112,Enercon,E82,En fonction
+Dinant - Yvoir1,Dinant - Yvoir,163,EDF LUMINUS,Yvoir- Dinant,2,50.298597,4.970049,Enercon,E82,En fonction
+Dinant - Yvoir2,Dinant - Yvoir,163,EDF LUMINUS,Yvoir- Dinant,2,50.298231,4.983267,Enercon,E82,En fonction
+Dinant - Yvoir3,Dinant - Yvoir,163,EDF LUMINUS,Yvoir- Dinant,2,50.295386,4.977293,Enercon,E82,En fonction
+Dinant - Yvoir4,Dinant - Yvoir,163,EDF LUMINUS,Yvoir- Dinant,2,50.294255,4.990345,Enercon,E82,En fonction
+Dinant - Yvoir5,Dinant - Yvoir,163,EDF LUMINUS,Yvoir- Dinant,2,50.294083,4.983887,Enercon,E82,En fonction
+Dour - Quiévrain,Dour - Quiévrain,160,Enairgie du Hainaut,DOUR 1 (Elouge / Quiévrain),2,50.4037,3.728048,Enercon,E82,En fonction
+Dour - Quiévrain1,Dour - Quiévrain,160,Enairgie du Hainaut,DOUR 1 (Elouge / Quiévrain),2,50.40303,3.71918,Enercon,E82,En fonction
+Dour - Quiévrain10,Dour - Quiévrain,7905,Engie Electrabel,DOUR 2 (Elouge / Quiévrain),2,50.412683,3.733217,Enercon,E82,En fonction
+Dour - Quiévrain11,Dour - Quiévrain,160,Enairgie du Hainaut,DOUR 3,2.3,50.399629,3.713839,Enercon,E82,En fonction
+Dour - Quiévrain12,Dour - Quiévrain,7954,Les moulins du Haut Pays,DOUR 3,2.3,50.400174,3.721414,Enercon,E82,En fonction
+Dour - Quiévrain13,Dour - Quiévrain,7954,Les moulins du Haut Pays,DOUR 3,2.3,50.400743,3.726667,Enercon,E82,En fonction
+Dour - Quiévrain14,Dour - Quiévrain,0,Wind4Wallonia,DOUR - QUIEVRAIN extension Nord,2.35,50.415027,3.718256,Enercon,E92,En fonction
+Dour - Quiévrain15,Dour - Quiévrain,9413,Enairgie du Hainaut,DOUR - QUIEVRAIN extension Nord,2.35,50.415923,3.72407,Enercon,E92,En fonction
+Dour - Quiévrain16,Dour - Quiévrain,9413,Enairgie du Hainaut,DOUR - QUIEVRAIN extension Nord,2.35,50.417896,3.728067,Enercon,E92,En fonction
+Dour - Quiévrain17,Dour - Quiévrain,0,Wind4Wallonia,DOUR - QUIEVRAIN extension Nord,2.35,50.414583,3.728844,Enercon,E92,En fonction
+Dour - Quiévrain2,Dour - Quiévrain,160,Enairgie du Hainaut,DOUR 1 (Elouge / Quiévrain),2,50.403432,3.723578,Enercon,E82,En fonction
+Dour - Quiévrain3,Dour - Quiévrain,160,Enairgie du Hainaut,DOUR 1 (Elouge / Quiévrain),2,50.402672,3.714613,Enercon,E82,En fonction
+Dour - Quiévrain4,Dour - Quiévrain,7905,Engie Electrabel,DOUR 1 (Elouge / Quiévrain),2,50.410424,3.726339,Enercon,E82,En fonction
+Dour - Quiévrain5,Dour - Quiévrain,7905,Engie Electrabel,DOUR 1 (Elouge / Quiévrain),2,50.409303,3.731771,Enercon,E82,En fonction
+Dour - Quiévrain6,Dour - Quiévrain,7905,Engie Electrabel,DOUR 1 (Elouge / Quiévrain),2,50.407586,3.736647,Enercon,E82,En fonction
+Dour - Quiévrain7,Dour - Quiévrain,160,Enairgie du Hainaut,DOUR 2 (Elouge / Quiévrain),2,50.40357,3.733915,Enercon,E82,En fonction
+Dour - Quiévrain8,Dour - Quiévrain,160,Enairgie du Hainaut,DOUR 2 (Elouge / Quiévrain),2,50.412426,3.740607,Enercon,E82,En fonction
+Dour - Quiévrain9,Dour - Quiévrain,7905,Engie Electrabel,DOUR 2 (Elouge / Quiévrain),2,50.412674,3.72182,Enercon,E82,En fonction
+Estaimpuis,Estaimpuis,0,e-NosVents,Estaimpuis,2.2,50.69315,3.29592,Vestas,V100,En fonction
+Estaimpuis1,Estaimpuis,0,e-NosVents,Estaimpuis,2.2,50.692622,3.303108,Vestas,V100,En fonction
+Estaimpuis2,Estaimpuis,0,e-NosVents,Estaimpuis,2.2,50.689743,3.296945,Vestas,V100,En fonction
+Estaimpuis3,Estaimpuis,0,IPALLE,Estaimpuis,2.2,50.679436,3.283,Vestas,V100,En fonction
+Estaimpuis4,Estaimpuis,0,IPALLE,Estaimpuis,2.2,50.675712,3.287628,Vestas,V100,En fonction
+Estinnes,Estinnes,798,Windvision Windfarm Estinnes,ESTINNES - Levant de Mons,7.5,50.421026,4.072935,Enercon,E 126,En fonction
+Estinnes1,Estinnes,798,Windvision Windfarm Estinnes,ESTINNES - Levant de Mons,7.5,50.420874,4.080662,Enercon,E 126,En fonction
+Estinnes10,Estinnes,798,Windvision Windfarm Estinnes,ESTINNES - Levant de Mons,6,50.403516,4.077911,Enercon,E 126,En fonction
+Estinnes2,Estinnes,798,Windvision Windfarm Estinnes,ESTINNES - Levant de Mons,7.5,50.420028,4.087661,Enercon,E 126,En fonction
+Estinnes3,Estinnes,798,Windvision Windfarm Estinnes,ESTINNES - Levant de Mons,7.5,50.416916,4.065433,Enercon,E 126,En fonction
+Estinnes4,Estinnes,798,Windvision Windfarm Estinnes,ESTINNES - Levant de Mons,7.5,50.416227,4.073542,Enercon,E 126,En fonction
+Estinnes5,Estinnes,798,Windvision Windfarm Estinnes,ESTINNES - Levant de Mons,7.5,50.416311,4.089751,Enercon,E 126,En fonction
+Estinnes6,Estinnes,798,Windvision Windfarm Estinnes,ESTINNES - Levant de Mons,7.5,50.411221,4.070801,Enercon,E 126,En fonction
+Estinnes7,Estinnes,798,Windvision Windfarm Estinnes,ESTINNES - Levant de Mons,7.5,50.411461,4.080451,Enercon,E 126,En fonction
+Estinnes8,Estinnes,798,Windvision Windfarm Estinnes,ESTINNES - Levant de Mons,7.5,50.406603,4.072054,Enercon,E 126,En fonction
+Estinnes9,Estinnes,798,Windvision Windfarm Estinnes,ESTINNES - Levant de Mons,7.5,50.406615,4.084124,Enercon,E 126,En fonction
+Feluy,Feluy,10013,Gestamp Wind Feluy,Feluy,2.05,50.548358,4.237115,Senvion,MM92,En fonction
+Feluy1,Feluy,10013,Gestamp Wind Feluy,Feluy,2.05,50.551547,4.234962,Senvion,MM92,En fonction
+Feluy2,Feluy,10013,Gestamp Wind Feluy,Feluy,2.05,50.553664,4.230327,Senvion,MM92,En fonction
+Feluy3,Feluy,10013,Gestamp Wind Feluy,Feluy,2.05,50.569162,4.22935,Senvion,MM92,En fonction
+Feluy4,Feluy,10013,Gestamp Wind Feluy,Feluy,2.05,50.562216,4.225292,Senvion,MM92,En fonction
+Feluy5,Feluy,10013,Gestamp Wind Feluy,Feluy,2.05,50.564994,4.2251,Senvion,MM92,En fonction
+Feluy6,Feluy,10013,Gestamp Wind Feluy,Feluy,2.05,50.567585,4.226645,Senvion,MM92,En fonction
+Fernelmont,Fernelmont,0,EDF LUMINUS,Fernelmont 2 (Marchovelette),3.45,50.527268,4.92433,Vestas,V112,En Construction
+Fernelmont1,Fernelmont,0,EDF LUMINUS,Fernelmont 2 (Marchovelette),3.45,50.52907,4.931051,Vestas,V112,En Construction
+Fernelmont2,Fernelmont,0,EDF LUMINUS,Fernelmont 2 (Marchovelette),3.45,50.522954,4.922263,Vestas,V112,En Construction
+Fernelmont3,Fernelmont,0,EDF LUMINUS,Fernelmont 2 (Marchovelette),3.45,50.52441,4.927977,Vestas,V112,En Construction
+Fernelmont4,Fernelmont,3094,EDF LUMINUS,Fernelmont,2.3,50.531935,4.969297,Enercon,E82,En fonction
+Fernelmont5,Fernelmont,3094,EDF LUMINUS,Fernelmont,2.3,50.534858,4.955129,Enercon,E82,En fonction
+Fernelmont6,Fernelmont,3094,EDF LUMINUS,Fernelmont 2,2.3,50.533051,4.963809,Enercon,E82,En fonction
+Floreffe - Fosses-la-Ville,Floreffe - Fosses-la-Ville,7056,EDF LUMINUS,Floreffe/Fosses-la-ville (plateau de Taravisée),2.3,50.411352,4.702096,Enercon,E82,En fonction
+Floreffe - Fosses-la-Ville1,Floreffe - Fosses-la-Ville,7056,EDF LUMINUS,Floreffe/Fosses-la-ville (plateau de Taravisée),2.3,50.424102,4.710826,Enercon,E82,En fonction
+Floreffe - Fosses-la-Ville2,Floreffe - Fosses-la-Ville,7056,EDF LUMINUS,Floreffe/Fosses-la-ville (plateau de Taravisée),2.3,50.419606,4.713918,Enercon,E82,En fonction
+Floreffe - Fosses-la-Ville3,Floreffe - Fosses-la-Ville,7056,EDF LUMINUS,Floreffe/Fosses-la-ville (plateau de Taravisée),2.3,50.422984,4.717883,Enercon,E82,En fonction
+Floreffe - Fosses-la-Ville4,Floreffe - Fosses-la-Ville,7946,EDF LUMINUS,Floreffe/Fosses-la-ville (plateau de Taravisée),2.3,50.420798,4.706004,Enercon,E82,En fonction
+Floreffe - Fosses-la-Ville5,Floreffe - Fosses-la-Ville,7946,EDF LUMINUS,Floreffe/Fosses-la-ville (plateau de Taravisée),2.3,50.415607,4.713494,Enercon,E82,En fonction
+Floreffe - Fosses-la-Ville6,Floreffe - Fosses-la-Ville,7946,EDF LUMINUS,Floreffe/Fosses-la-ville (plateau de Taravisée),2.3,50.41482,4.709,Enercon,E82,En fonction
+Floreffe - Fosses-la-Ville7,Floreffe - Fosses-la-Ville,0,EDF LUMINUS,Floreffe/ Fosses-la-Ville extension,2.35,50.408684,4.707268,Enercon,E92,En fonction
+Floreffe - Fosses-la-Ville8,Floreffe - Fosses-la-Ville,0,EDF LUMINUS,Floreffe/ Fosses-la-Ville extension,2.35,50.409627,4.71369,Enercon,E92,En fonction
+Floreffe - Fosses-la-Ville9,Floreffe - Fosses-la-Ville,0,EDF LUMINUS,Floreffe/ Fosses-la-Ville extension,2.35,50.405653,4.716925,Enercon,E92,En fonction
+Fosses-la-Ville,Fosses-la-Ville,233,Electricité du Bois du Prince s.a.,Mettet - Fosses-la-Ville,2,50.366317,4.651978,Enercon,E82,En fonction
+Fosses-la-Ville1,Fosses-la-Ville,233,Electricité du Bois du Prince s.a.,Mettet - Fosses-la-Ville,2,50.365422,4.661053,Enercon,E82,En fonction
+Fosses-la-Ville10,Fosses-la-Ville,233,Electricité du Bois du Prince s.a.,Mettet - Fosses-la-Ville,2,50.376432,4.651884,Enercon,E82,En fonction
+Fosses-la-Ville11,Fosses-la-Ville,233,Electricité du Bois du Prince s.a.,Mettet / Fosses-la-ville extension,2.3,50.377776,4.660778,Enercon,E82,En fonction
+Fosses-la-Ville12,Fosses-la-Ville,233,Electricité du Bois du Prince s.a.,Mettet / Fosses-la-ville extension,2.3,50.378881,4.667997,Enercon,E82,En fonction
+Fosses-la-Ville13,Fosses-la-Ville,233,Electricité du Bois du Prince s.a.,Mettet / Fosses-la-ville extension,2.3,50.371432,4.629405,Enercon,E82,En fonction
+Fosses-la-Ville14,Fosses-la-Ville,233,Electricité du Bois du Prince s.a.,Mettet / Fosses-la-ville extension,2.3,50.369102,4.63396,Enercon,E82,En fonction
+Fosses-la-Ville2,Fosses-la-Ville,233,Electricité du Bois du Prince s.a.,Mettet - Fosses-la-Ville,2,50.365103,4.644915,Enercon,E82,En fonction
+Fosses-la-Ville3,Fosses-la-Ville,233,Electricité du Bois du Prince s.a.,Mettet - Fosses-la-Ville,2,50.362282,4.651519,Enercon,E82,En fonction
+Fosses-la-Ville4,Fosses-la-Ville,233,Electricité du Bois du Prince s.a.,Mettet - Fosses-la-Ville,2,50.361295,4.657654,Enercon,E82,En fonction
+Fosses-la-Ville5,Fosses-la-Ville,233,Electricité du Bois du Prince s.a.,Mettet - Fosses-la-Ville,2,50.366977,4.639135,Enercon,E82,En fonction
+Fosses-la-Ville6,Fosses-la-Ville,233,Electricité du Bois du Prince s.a.,Mettet - Fosses-la-Ville,2,50.369459,4.66105,Enercon,E82,En fonction
+Fosses-la-Ville7,Fosses-la-Ville,233,Electricité du Bois du Prince s.a.,Mettet - Fosses-la-Ville,2,50.372788,4.656417,Enercon,E82,En fonction
+Fosses-la-Ville8,Fosses-la-Ville,233,Electricité du Bois du Prince s.a.,Mettet - Fosses-la-Ville,2,50.374312,4.643521,Enercon,E82,En fonction
+Fosses-la-Ville9,Fosses-la-Ville,233,Electricité du Bois du Prince s.a.,Mettet - Fosses-la-Ville,2,50.374561,4.662839,Enercon,E82,En fonction
+Frasnes-lez-Anvaing,Frasnes-lez-Anvaing,8760,Engie Electrabel,Frasnes-lez-Anvaing,2.05,50.658256,3.640404,Senvion,MM92,En fonction
+Frasnes-lez-Anvaing1,Frasnes-lez-Anvaing,8760,Engie Electrabel,Frasnes-lez-Anvaing,2.05,50.65695,3.644299,Senvion,MM92,En fonction
+Frasnes-lez-Anvaing2,Frasnes-lez-Anvaing,8231,Flawind,Frasnes-lez-Anvaing,2.05,50.655654,3.648392,Senvion,MM92,En fonction
+Frasnes-lez-Anvaing3,Frasnes-lez-Anvaing,9421,Frasnes-Les-Vents,Frasnes-lez-Anvaing ext,2,50.653549,3.652624,Senvion,MM100,En fonction
+Froidchapelle,Froidchapelle,2825,GREEN WIND,Beaumont (Froidchapelle),2.5,50.224499,4.321062,GE,GE 2.5,En fonction
+Froidchapelle1,Froidchapelle,2825,GREEN WIND,Beaumont (Froidchapelle),2.5,50.223154,4.33034,GE,GE 2.5,En fonction
+Froidchapelle2,Froidchapelle,2825,GREEN WIND,Beaumont (Froidchapelle),2.5,50.22259,4.338566,GE,GE 2.5,En fonction
+Froidchapelle3,Froidchapelle,2825,GREEN WIND,Beaumont (Froidchapelle),2.5,50.220067,4.322734,GE,GE 2.5,En fonction
+Froidchapelle4,Froidchapelle,2825,GREEN WIND,Beaumont (Froidchapelle),2.5,50.219018,4.329166,GE,GE 2.5,En fonction
+Froidchapelle5,Froidchapelle,2825,GREEN WIND,Beaumont (Froidchapelle),2.5,50.21602,4.319893,GE,GE 2.5,En fonction
+Froidchapelle6,Froidchapelle,2825,GREEN WIND,Beaumont (Froidchapelle),2.5,50.214145,4.331034,GE,GE 2.5,En fonction
+Froidchapelle7,Froidchapelle,2825,GREEN WIND,Beaumont (Froidchapelle),2.5,50.21181,4.337648,GE,GE 2.5,En fonction
+Froidchapelle8,Froidchapelle,2825,GREEN WIND,Beaumont (Froidchapelle),2.5,50.209919,4.329972,GE,GE 2.5,En fonction
+Froidchapelle9,Froidchapelle,2825,GREEN WIND,Beaumont (Froidchapelle),2.5,50.207255,4.320182,GE,GE 2.5,En fonction
+Gembloux - Sombreffe,Gembloux - Sombreffe,86,Les Vents de l'Ornoi,Gembloux - Sombreffe,1.5,50.546654,4.633281,GE,GE 1.5sl,En fonction
+Gembloux - Sombreffe1,Gembloux - Sombreffe,86,Les Vents de l'Ornoi,Gembloux - Sombreffe,1.5,50.548416,4.629383,GE,GE 1.5sl,En fonction
+Gembloux - Sombreffe2,Gembloux - Sombreffe,86,Les Vents de l'Ornoi,Gembloux - Sombreffe,1.5,50.544129,4.636526,GE,GE 1.5sl,En fonction
+Gembloux - Sombreffe3,Gembloux - Sombreffe,86,Les Vents de l'Ornoi,Gembloux - Sombreffe,1.5,50.539686,4.629588,GE,GE 1.5sl,En fonction
+Gembloux - Sombreffe4,Gembloux - Sombreffe,86,Les Vents de l'Ornoi,Gembloux - Sombreffe (extension),1.5,50.542857,4.626601,Senvion,MD77,En fonction
+Gembloux - Sombreffe5,Gembloux - Sombreffe,86,Les Vents de l'Ornoi,Gembloux - Sombreffe (extension),1.5,50.545832,4.622822,Senvion,MD77,En fonction
+Gesves-Ohey,Gesves-Ohey,0,Windvision,Gesves - Ohey,3.2,50.404442,5.096074,Siemens,SWT-3.2-113,En Construction
+Gesves-Ohey1,Gesves-Ohey,0,Windvision,Gesves - Ohey,3.2,50.407086,5.101658,Siemens,SWT-3.2-113,En Construction
+Gesves-Ohey2,Gesves-Ohey,0,Windvision,Gesves - Ohey,3.2,50.41024,5.109093,Siemens,SWT-3.2-113,En Construction
+Gesves-Ohey3,Gesves-Ohey,0,Windvision,Gesves - Ohey,3.2,50.413126,5.113247,Siemens,SWT-3.2-113,En Construction
+Gesves-Ohey4,Gesves-Ohey,0,Windvision,Gesves - Ohey,3.2,50.41673,5.11775,Siemens,SWT-3.2-113,En Construction
+Gesves-Ohey5,Gesves-Ohey,0,Energie 2030,Gesves - Ohey,3.2,50.420829,5.122037,Siemens,SWT-3.2-113,En Construction
+Ghislenghien,Ghislenghien,147,Eoly,Ghislenghien,2,50.660142,3.851046,Enercon,E82,En fonction
+Gouvy,Gouvy,8150,TIVANO,Gouvy,2.3,50.202093,5.928367,Nordex,N 100,En fonction
+Gouvy1,Gouvy,8150,TIVANO,Gouvy,2.3,50.201066,5.932494,Nordex,N 100,En fonction
+Gouvy2,Gouvy,8150,TIVANO,Gouvy,2.3,50.199561,5.936031,Nordex,N 100,En fonction
+Gouvy3,Gouvy,8150,TIVANO,Gouvy,2.3,50.19953,5.938972,Nordex,N 100,En fonction
+Gouvy4,Gouvy,8150,TIVANO,Gouvy,2.3,50.195589,5.941154,Nordex,N 100,En fonction
+Houyet,Houyet,8241,ECOPOWER,Houyet (2),2.3,50.176526,4.862596,Enercon,E87,En fonction
+Houyet1,Houyet,8241,ECOPOWER,Houyet (2),2.3,50.181061,4.87026,Enercon,E87,En fonction
+Houyet2,Houyet,8241,ECOPOWER,Houyet (2),2.3,50.178495,4.881153,Enercon,E87,En fonction
+Houyet3,Houyet,8241,ECOPOWER,Houyet (2),2.3,50.17889,4.893408,Enercon,E87,En fonction
+Houyet4,Houyet,0,None,Mesnil-St-Blaise / Houyet extension,2.3,50.178523,4.874923,Enercon,E82,En fonction
+Héron,Héron,0,EDF LUMINUS,Héron,2.5,50.531854,5.099757,Gamesa,G114,En fonction
+Héron1,Héron,0,EDF LUMINUS,Héron,2.5,50.533289,5.105901,Gamesa,G114,En fonction
+Héron2,Héron,0,EDF LUMINUS,Héron,2.5,50.535475,5.111437,Gamesa,G114,En fonction
+La Louvière,La Louvière,10025,Magna Wind Park,Garo Centre (La Louvière),2.35,50.500785,4.179863,Enercon,E92,En fonction
+La Louvière1,La Louvière,10025,Magna Wind Park,Garo Centre (La Louvière),2.35,50.500558,4.184163,Enercon,E92,En fonction
+La Louvière2,La Louvière,10025,Magna Wind Park,Garo Centre (La Louvière),2.35,50.500481,4.192747,Enercon,E92,En fonction
+La Louvière3,La Louvière,10025,Magna Wind Park,Garo Centre (La Louvière),2.35,50.500277,4.188477,Enercon,E92,En fonction
+Leuze-en-Hainaut,Leuze-en-Hainaut,8122,Engie Electrabel,Leuze-en-Hainaut,2.05,50.604999,3.6701,Senvion,MM92,En fonction
+Leuze-en-Hainaut 2 (Tourpes - Thumaide),Leuze-en-Hainaut 2 (Tourpes - Thumaide),8414,EDF LUMINUS,Tourpes - Thumaide,2.3,50.554111,3.623433,Enercon,E82,En fonction
+Leuze-en-Hainaut 2 (Tourpes - Thumaide)1,Leuze-en-Hainaut 2 (Tourpes - Thumaide),8414,EDF LUMINUS,Tourpes - Thumaide,2.3,50.554313,3.628327,Enercon,E82,En fonction
+Leuze-en-Hainaut 2 (Tourpes - Thumaide)2,Leuze-en-Hainaut 2 (Tourpes - Thumaide),8414,EDF LUMINUS,Tourpes - Thumaide,2.3,50.557453,3.628602,Enercon,E82,En fonction
+Leuze-en-Hainaut 2 (Tourpes - Thumaide)3,Leuze-en-Hainaut 2 (Tourpes - Thumaide),8414,EDF LUMINUS,Tourpes - Thumaide,2.3,50.560439,3.633086,Enercon,E82,En fonction
+Leuze-en-Hainaut 2 (Tourpes - Thumaide)4,Leuze-en-Hainaut 2 (Tourpes - Thumaide),8414,EDF LUMINUS,Tourpes - Thumaide,2.3,50.556661,3.635643,Enercon,E82,En fonction
+Leuze-en-Hainaut 2 (Tourpes - Thumaide)5,Leuze-en-Hainaut 2 (Tourpes - Thumaide),8414,EDF LUMINUS,Tourpes - Thumaide,2.3,50.553241,3.639309,Enercon,E82,En fonction
+Leuze-en-Hainaut 2 (Tourpes - Thumaide)6,Leuze-en-Hainaut 2 (Tourpes - Thumaide),8414,EDF LUMINUS,Tourpes - Thumaide,2.3,50.558801,3.624291,Enercon,E82,En fonction
+Leuze-en-Hainaut 2 (Tourpes - Thumaide)7,Leuze-en-Hainaut 2 (Tourpes - Thumaide),8414,EDF LUMINUS,Tourpes - Thumaide,2.3,50.552181,3.639438,Enercon,E82,En fonction
+Leuze-en-Hainaut 2 (Tourpes - Thumaide)8,Leuze-en-Hainaut 2 (Tourpes - Thumaide),8414,EDF LUMINUS,Tourpes - Thumaide,2.3,50.555969,3.642922,Enercon,E82,En fonction
+Leuze-en-Hainaut1,Leuze-en-Hainaut,8122,Engie Electrabel,Leuze-en-Hainaut,2.05,50.602671,3.66276,Senvion,MM92,En fonction
+Leuze-en-Hainaut2,Leuze-en-Hainaut,8122,Engie Electrabel,Leuze-en-Hainaut,2.05,50.600594,3.655375,Senvion,MM92,En fonction
+Leuze-en-Hainaut3,Leuze-en-Hainaut,8122,Engie Electrabel,Leuze-en-Hainaut,2.05,50.597519,3.649503,Senvion,MM92,En fonction
+Leuze-en-Hainaut4,Leuze-en-Hainaut,8122,Engie Electrabel,Leuze-en-Hainaut,2.05,50.594009,3.650319,Senvion,MM92,En fonction
+Leuze-en-Hainaut5,Leuze-en-Hainaut,8122,Engie Electrabel,Leuze-en-Hainaut,2.05,50.591171,3.647919,Senvion,MM92,En fonction
+Leuze-en-Hainaut6,Leuze-en-Hainaut,8122,Engie Electrabel,Leuze-en-Hainaut,2.05,50.58832,3.639051,Senvion,MM92,En fonction
+Leuze-en-Hainaut7,Leuze-en-Hainaut,8144,e-NosVents,Leuze-en-Hainaut,2.05,50.58832,3.639051,Senvion,MM92,En fonction
+Leuze-en-Hainaut8,Leuze-en-Hainaut,8123,e-NosVents,Leuze-en-Hainaut,2.05,50.59111,3.636635,Senvion,MM92,En fonction
+Leuze-en-Hainaut9,Leuze-en-Hainaut,8173,PELZ - CLEF scrl,Leuze-en-Hainaut,2.05,50.596843,3.643284,Senvion,MM92,En fonction
+Lierneux,Lierneux,0,EDF LUMINUS,Lierneux,3.2,50.323717,5.821805,Siemens,SWT-3.2-113,En Construction
+Lierneux1,Lierneux,0,EDF LUMINUS,Lierneux,3.2,50.327678,5.826491,Siemens,SWT-3.2-113,En Construction
+Lierneux2,Lierneux,0,EDF LUMINUS,Lierneux,3.2,50.331717,5.834229,Siemens,SWT-3.2-113,En Construction
+Lierneux3,Lierneux,0,EDF LUMINUS,Lierneux,3.2,50.324503,5.827939,Siemens,SWT-3.2-113,En Construction
+Lierneux4,Lierneux,0,EDF LUMINUS,Lierneux,3.2,50.321084,5.823803,Siemens,SWT-3.2-113,En Construction
+Lierneux5,Lierneux,0,EDF LUMINUS,Lierneux,3.2,50.327986,5.832709,Siemens,SWT-3.2-113,En Construction
+Lincent - Hélécine - Hannut,Lincent - Hélécine - Hannut,0,None,Greensky E40-Lincent-Hélécine-Hannut-Orp Jauche,2,50.726361,4.987841,Vestas,V100,En fonction
+Lincent - Hélécine - Hannut1,Lincent - Hélécine - Hannut,0,None,Greensky E40-Lincent-Hélécine-Hannut-Orp Jauche,2,50.724898,4.992552,Vestas,V100,En fonction
+Lincent - Hélécine - Hannut2,Lincent - Hélécine - Hannut,0,None,Greensky E40-Lincent-Hélécine-Hannut-Orp Jauche,2,50.720601,5.01395,Vestas,V100,En fonction
+Lincent - Hélécine - Hannut3,Lincent - Hélécine - Hannut,0,None,Greensky E40-Lincent-Hélécine-Hannut-Orp Jauche,2,50.71979,5.020737,Vestas,V100,En fonction
+Lincent - Hélécine - Hannut4,Lincent - Hélécine - Hannut,0,None,Greensky E40-Lincent-Hélécine-Hannut-Orp Jauche,2,50.718874,5.039644,Vestas,V100,En fonction
+Lincent - Hélécine - Hannut5,Lincent - Hélécine - Hannut,0,None,Greensky E40-Lincent-Hélécine-Hannut-Orp Jauche,2,50.71867,5.045348,Vestas,V100,En fonction
+Lincent - Hélécine - Hannut6,Lincent - Hélécine - Hannut,0,None,Greensky E40-Lincent-Hélécine-Hannut-Orp Jauche,2,50.718292,5.051573,Vestas,V100,En fonction
+Lincent - Hélécine - Hannut7,Lincent - Hélécine - Hannut,0,None,Greensky E40-Lincent-Hélécine-Hannut-Orp Jauche,2,50.706846,5.102177,Vestas,V100,En fonction
+Lincent - Hélécine - Hannut8,Lincent - Hélécine - Hannut,0,None,Greensky E40-Lincent-Hélécine-Hannut-Orp Jauche,2,50.705571,5.106291,Vestas,V100,En fonction
+Marbais,Marbais,144,Electrastar,Marbais,2,50.541391,4.513279,Enercon,E82,En fonction
+Marbais1,Marbais,144,Electrastar,Marbais,2,50.538903,4.517969,Enercon,E82,En fonction
+Marbais10,Marbais,144,Electrastar,Marbais - extension,2,50.529909,4.507137,Enercon,E82,En fonction
+Marbais2,Marbais,144,Electrastar,Marbais,2,50.536694,4.523153,Enercon,E82,En fonction
+Marbais3,Marbais,144,Electrastar,Marbais,2,50.533777,4.525922,Enercon,E82,En fonction
+Marbais4,Marbais,144,Electrastar,Marbais,2,50.538962,4.506797,Enercon,E82,En fonction
+Marbais5,Marbais,144,Electrastar,Marbais,2,50.536801,4.509781,Enercon,E82,En fonction
+Marbais6,Marbais,144,Electrastar,Marbais,2,50.533974,4.513426,Enercon,E82,En fonction
+Marbais7,Marbais,144,Electrastar,Marbais,2,50.532161,4.518216,Enercon,E82,En fonction
+Marbais8,Marbais,144,Electrastar,Marbais - extension,2,50.536841,4.498679,Enercon,E82,En fonction
+Marbais9,Marbais,144,Electrastar,Marbais - extension,2,50.533427,4.50434,Enercon,E82,En fonction
+Mesnil-Eglise - Finnevaux,Mesnil-Eglise - Finnevaux,94,Vents d'Houyet,Mesnil-Eglise- Finnevaux,0.695,50.15629,4.956203,Enercon,E40b,En fonction
+Mesnil-Eglise - Finnevaux1,Mesnil-Eglise - Finnevaux,94,Vents d'Houyet,Mesnil-Eglise- Finnevaux,0.695,50.159742,4.931054,Enercon,E40b,En fonction
+Mesnil-Eglise - Finnevaux2,Mesnil-Eglise - Finnevaux,132,Allons en vent,Mesnil-Eglise,0.8,50.160214,4.926441,Enercon,E48,En fonction
+Modave,Modave,0,None,Modave (Les Trinitaires),3.2,50.495748,5.259374,Senvion,MM114,En Construction
+Modave1,Modave,0,None,Modave (Les Trinitaires),3.2,50.495736,5.263292,Senvion,MM114,En Construction
+Modave2,Modave,0,None,Modave (Les Trinitaires),3.2,50.493156,5.265625,Senvion,MM114,En Construction
+Modave3,Modave,0,None,Modave (Les Trinitaires),3.2,50.493609,5.272131,Senvion,MM114,En Construction
+Modave4,Modave,0,None,Modave (Les Trinitaires),3.2,50.496709,5.268949,Senvion,MM114,En Construction
+Molenbaix,Molenbaix,0,Cordona Wind,Molenbaix (Celles - Pecq),2,50.703379,3.387881,Senvion,MM100,En Construction
+Molenbaix1,Molenbaix,0,Cordona Wind,Molenbaix (Celles - Pecq),2,50.705853,3.394611,Senvion,MM100,En Construction
+Molenbaix2,Molenbaix,0,Cordona Wind,Molenbaix (Celles - Pecq),2,50.696715,3.38659,Senvion,MM100,En Construction
+Molenbaix3,Molenbaix,0,Cordona Wind,Molenbaix (Celles - Pecq),2,50.701978,3.403228,Senvion,MM100,En Construction
+Molenbaix4,Molenbaix,0,PELZ - CLEF scrl,Molenbaix (Celles - Pecq),2,50.703862,3.409263,Senvion,MM100,En Construction
+Nivelles,Nivelles,0,None,Nivelles,3.4,50.575332,4.3078,Senvion,MM114,En fonction
+Nivelles1,Nivelles,0,None,Nivelles,3.4,50.571798,4.305602,Senvion,MM114,En fonction
+Nivelles2,Nivelles,0,None,Nivelles,3.4,50.577596,4.303307,Senvion,MM114,En fonction
+Nivelles3,Nivelles,0,None,Nivelles,3.4,50.57398,4.300912,Senvion,MM114,En fonction
+Ollignies,Ollignies,0,None,Ollignies Ath/Lessines,2,50.674486,3.875096,Vestas,V100,En fonction
+Peruwelz - Beloeil,Peruwelz - Beloeil,0,IPALLE - IDETA,Peruwelz - Beloeil (Moulin St-Roch),2,50.529737,3.620488,Senvion,MM100,En Construction
+Peruwelz - Beloeil1,Peruwelz - Beloeil,0,IPALLE - IDETA,Peruwelz - Beloeil (Moulin St-Roch),2,50.531518,3.617765,Senvion,MM100,En Construction
+Peruwelz - Beloeil2,Peruwelz - Beloeil,0,IPALLE - IDETA,Peruwelz - Beloeil (Moulin St-Roch),2,50.533362,3.615126,Senvion,MM100,En Construction
+Peruwelz - Beloeil3,Peruwelz - Beloeil,0,IPALLE - IDETA,Peruwelz - Beloeil (Moulin St-Roch),2,50.535715,3.613439,Senvion,MM100,En Construction
+Perwez 2,Perwez 2,107,Les vents de Perwez,Perwez,1.5,50.616839,4.78661,GE,GE 1.5,En fonction
+Perwez 21,Perwez 2,107,Les vents de Perwez,Perwez,1.5,50.614485,4.791252,GE,GE 1.5,En fonction
+Perwez 22,Perwez 2,107,Les vents de Perwez,Perwez,1.5,50.611778,4.796568,GE,GE 1.5,En fonction
+Perwez 23,Perwez 2,107,Les vents de Perwez,Perwez,1.5,50.608991,4.801262,GE,GE 1.5,En fonction
+Perwez 24,Perwez 2,107,Les vents de Perwez,Perwez,1.5,50.603978,4.800523,GE,GE 1.5,En fonction
+Perwez 3,Perwez 3,130,ENI Wind Belgium,Perwez,1.5,50.604269,4.794593,Senvion,MD77,En fonction
+Perwez 31,Perwez 3,130,ENI Wind Belgium,Perwez,1.5,50.606474,4.791406,Senvion,MD77,En fonction
+Perwez 32,Perwez 3,130,ENI Wind Belgium,Perwez,1.5,50.608661,4.788261,Senvion,MD77,En fonction
+Perwez 4 Aische-en-Refail,Perwez 4 Aische-en-Refail,7963,Hegoa Wind,Eghezée - Aische-en-Refail,2.5,50.599505,4.796838,Nordex,N 100,En fonction
+Perwez 4 Aische-en-Refail1,Perwez 4 Aische-en-Refail,7963,Hegoa Wind,Eghezée - Aische-en-Refail,2.5,50.596634,4.80016,Nordex,N 100,En fonction
+Perwez 4 Aische-en-Refail2,Perwez 4 Aische-en-Refail,7963,Hegoa Wind,Eghezée (Aische-en-Refail) - PERWEZ 4,2.5,50.601494,4.805869,Nordex,N 100,En fonction
+Perwez 5 et 6,Perwez 5 et 6,8559,ASPIRAVI,Perwez,2,50.607074,4.792301,Vestas,V90,En fonction
+Perwez 5 et 61,Perwez 5 et 6,8559,ASPIRAVI,Perwez,2,50.604856,4.781503,Vestas,V90,En fonction
+Perwez 5 et 62,Perwez 5 et 6,8559,ASPIRAVI,Perwez,2,50.602291,4.784856,Vestas,V90,En fonction
+Perwez 5 et 63,Perwez 5 et 6,8385,ELICIO,Perwez,2,50.595868,4.790958,Vestas,V90,En fonction
+Perwez 5 et 64,Perwez 5 et 6,8385,ELICIO,Perwez,2,50.591444,4.793488,Vestas,V90,En fonction
+Pont-à-Celles,Pont-à-Celles,2412,Sky Sweeper sa,Pont-à-Celles,2,50.552546,4.343416,Enercon,E82,En fonction
+Pont-à-Celles1,Pont-à-Celles,2412,Sky Sweeper sa,Pont-à-Celles,2,50.549913,4.34727,Enercon,E82,En fonction
+Pont-à-Celles2,Pont-à-Celles,2412,Sky Sweeper sa,Pont-à-Celles,2,50.548143,4.35156,Enercon,E82,En fonction
+Pont-à-Celles3,Pont-à-Celles,2412,Sky Sweeper sa,Pont-à-Celles,2,50.54449,4.339202,Enercon,E82,En fonction
+Pont-à-Celles4,Pont-à-Celles,2412,Sky Sweeper sa,Pont-à-Celles,2,50.543521,4.345523,Enercon,E82,En fonction
+Pont-à-Celles5,Pont-à-Celles,2412,Sky Sweeper sa,Pont-à-Celles,2,50.541966,4.350151,Enercon,E82,En fonction
+Pont-à-Celles6,Pont-à-Celles,2412,Sky Sweeper sa,Pont-à-Celles,2,50.538494,4.339953,Enercon,E82,En fonction
+Pont-à-Celles7,Pont-à-Celles,2412,Sky Sweeper sa,Pont-à-Celles,2,50.536634,4.34499,Enercon,E82,En fonction
+Quévy,Quévy,7929,KVNRG,Quévy-le gd Q-le Pt Bougnies,2,50.371235,3.95446,Enercon,E82,En fonction
+Quévy1,Quévy,7929,KVNRG,Quévy-le gd Q-le Pt Bougnies,2,50.374453,3.949286,Enercon,E82,En fonction
+Quévy2,Quévy,7929,KVNRG,Quévy-le gd Q-le Pt Bougnies,2,50.377016,3.954466,Enercon,E82,En fonction
+Quévy3,Quévy,7929,KVNRG,Quévy-le gd Q-le Pt Bougnies,2,50.37495,3.942351,Enercon,E82,En fonction
+Quévy4,Quévy,7929,KVNRG,Quévy-le gd Q-le Pt Bougnies,2,50.379544,3.960011,Enercon,E82,En fonction
+Quévy5,Quévy,7984,Engie Electrabel,Quévy-le gd Q-le Pt Bougnies,2,50.380044,3.948984,Enercon,E82,En fonction
+Quévy6,Quévy,7984,Engie Electrabel,Quévy-le gd Q-le Pt Bougnies,2,50.382958,3.954301,Enercon,E82,En fonction
+Quévy7,Quévy,7984,Engie Electrabel,Quévy-le gd Q-le Pt Bougnies,2,50.387667,3.958606,Enercon,E82,En fonction
+Quévy8,Quévy,7962,SODECOM - Vanheede Windpower,Quévy-le gd Q-le Pt Bougnies,2,50.366852,3.960696,Enercon,E82,En fonction
+Saint-Vith,Saint-Vith,104,ENERGIE 2030,Saint Vith,0.5,50.284711,6.100228,Enercon,E40b,En fonction
+Saint-Vith 2,Saint-Vith 2,8054,Windfarm Sankt-Vith,Saint Vith,2,50.311587,6.078065,Vestas,V90,En fonction
+Saint-Vith 21,Saint-Vith 2,8054,Windfarm Sankt-Vith,Saint Vith,2,50.308081,6.076183,Vestas,V90,En fonction
+Saint-Vith 22,Saint-Vith 2,8054,Windfarm Sankt-Vith,Saint Vith,2,50.30453,6.074216,Vestas,V90,En fonction
+Saint-Vith 23,Saint-Vith 2,8054,Windfarm Sankt-Vith,Saint Vith,2,50.30187,6.071074,Vestas,V90,En fonction
+Saint-Vith 24,Saint-Vith 2,8054,Windfarm Sankt-Vith,Saint Vith,2,50.299468,6.068082,Vestas,V90,En fonction
+Sainte Ode,Sainte Ode,50,RPC,Flamièrge,1.25,50.029937,5.585337,Dewind,D6,En fonction
+Sainte Ode1,Sainte Ode,50,RPC,Flamièrge,1.25,50.028638,5.59005,Dewind,D6,En fonction
+Sainte Ode10,Sainte Ode1,7911,RPC,Sainte Ode,2.5,50.00567,5.595309,Fuhrlander,FL 2500 2500kW,En fonction
+Sainte Ode11,Sainte Ode1,7911,RPC,Sainte Ode,2.5,50.002066,5.600281,Fuhrlander,FL 2500 2500kW,En fonction
+Sainte Ode2,Sainte Ode,50,RPC,Flamièrge,1.25,50.027536,5.592172,Dewind,D6,En fonction
+Sainte Ode3,Sainte Ode,50,RPC,Flamièrge,1.25,50.026524,5.594309,Dewind,D6,En fonction
+Sainte Ode4,Sainte Ode,50,RPC,Flamièrge,1.25,50.025272,5.596259,Dewind,D6,En fonction
+Sainte Ode5,Sainte Ode,50,RPC,Flamièrge,1.25,50.023887,5.597926,Dewind,D6,En fonction
+Sainte Ode6,Sainte Ode,7911,RPC,Sainte Ode,2.5,50.017682,5.604744,Fuhrlander,FL 2500 2500kW,En fonction
+Sainte Ode7,Sainte Ode,7911,RPC,Sainte Ode,2.5,50.015953,5.609151,Fuhrlander,FL 2500 2500kW,En fonction
+Sainte Ode8,Sainte Ode,7911,RPC,Sainte Ode,2.5,50.014197,5.613543,Fuhrlander,FL 2500 2500kW,En fonction
+Sainte Ode9,Sainte Ode,7911,RPC,Sainte Ode,2.5,50.008353,5.588304,Fuhrlander,FL 2500 2500kW,En fonction
+Seneffe,Seneffe,8242,Dow Corning,Seneffe,2.3,50.512792,4.262761,Enercon,E82,En fonction
+Spy,Spy,0,EDF LUMINUS,Spy 3 - Fri-Pharma,2.2,50.503917,4.72023,Vestas,V100,En Construction
+Spy1,Spy,8869,EDF LUMINUS,SPY - Jemeppe-sur-sambre,3.4,50.500566,4.704093,Senvion,3.4M,En fonction
+Spy2,Spy,8869,EDF LUMINUS,SPY - Jemeppe-sur-sambre,3.4,50.497983,4.708374,Senvion,3.4M,En fonction
+Spy3,Spy,9510,Eoly,SPY - Jemeppe-sur-sambre,3.4,50.4978,4.715406,Senvion,3.4M,En fonction
+Sterpenich,Sterpenich,0,Wind4Wallonia,Sterpenich (Arlon),2,49.638208,5.89333,Senvion,MM100,En fonction
+Sterpenich1,Sterpenich,0,Wind4Wallonia,Sterpenich (Arlon),2,49.637611,5.898282,Senvion,MM100,En fonction
+Sterpenich2,Sterpenich,0,Wind4Wallonia,Sterpenich (Arlon),2,49.637014,5.903193,Senvion,MM100,En fonction
+Tournai Antoing,Tournai Antoing,7928,TABNRG,Tournai -Antoing-Brunehaut 1,2.3,50.570015,3.409067,Enercon,E82,En fonction
+Tournai Antoing1,Tournai Antoing,7928,TABNRG,Tournai -Antoing-Brunehaut 1,2.3,50.571011,3.414285,Enercon,E82,En fonction
+Tournai Antoing2,Tournai Antoing,7928,TABNRG,Tournai -Antoing-Brunehaut 1,2.3,50.563583,3.397722,Enercon,E82,En fonction
+Tournai Antoing3,Tournai Antoing,7928,TABNRG,Tournai -Antoing-Brunehaut 1,2.3,50.563751,3.401727,Enercon,E82,En fonction
+Tournai Antoing4,Tournai Antoing,7928,TABNRG,Tournai -Antoing-Brunehaut 1,2.3,50.563617,3.406219,Enercon,E82,En fonction
+Tournai Antoing5,Tournai Antoing,7928,TABNRG,Tournai -Antoing-Brunehaut 1,2.3,50.564317,3.410453,Enercon,E82,En fonction
+Tournai Antoing6,Tournai Antoing,7928,TABNRG,Tournai -Antoing-Brunehaut 1,2.3,50.566021,3.416489,Enercon,E82,En fonction
+Tournai Marquain,Tournai Marquain,0,e-NosVents,Tournai Marquain (zoning Tournai Ouest 3),2.2,50.612627,3.299809,Vestas,V100,En fonction
+Tournai Marquain1,Tournai Marquain,0,e-NosVents,Tournai Marquain (zoning Tournai Ouest 3),2.2,50.61459,3.306039,Vestas,V100,En fonction
+Tournai Marquain2,Tournai Marquain,0,e-NosVents,Tournai Marquain (zoning Tournai Ouest 3),2.2,50.617534,3.311399,Vestas,V100,En fonction
+Tournai Marquain3,Tournai Marquain,0,e-NosVents,Tournai Marquain (zoning Tournai Ouest 3),2.2,50.61981,3.316535,Vestas,V100,En fonction
+Tournai Marquain4,Tournai Marquain,0,e-NosVents,Tournai Marquain (zoning Tournai Ouest 3),2.2,50.61202,3.304175,Vestas,V100,En fonction
+Tournai Marquain5,Tournai Marquain,0,e-NosVents,Tournai Marquain (zoning Tournai Ouest 3),2.2,50.613305,3.310067,Vestas,V100,En fonction
+Tournai Marquain6,Tournai Marquain,0,e-NosVents,Tournai Marquain (zoning Tournai Ouest 3),2.2,50.615224,3.314518,Vestas,V100,En fonction
+Tournai Marquain7,Tournai Marquain,0,e-NosVents,Tournai Marquain (zoning Tournai Ouest 3),2.2,50.617063,3.319013,Vestas,V100,En fonction
+Verlaine - Villers-le-Bouillet,Verlaine - Villers-le-Bouillet,3118,Enercity,Villers 3 (Verlaine),2,50.597897,5.279707,Senvion,MM92,En fonction
+Verlaine - Villers-le-Bouillet1,Verlaine - Villers-le-Bouillet,3093,EDF LUMINUS,Villers 3 (Verlaine),2,50.59818,5.287228,Senvion,MM92,En fonction
+Verlaine - Villers-le-Bouillet2,Verlaine - Villers-le-Bouillet,3093,EDF LUMINUS,Villers 3 (Verlaine),2,50.598426,5.293618,Senvion,MM92,En fonction
+Verlaine - Villers-le-Bouillet3,Verlaine - Villers-le-Bouillet,3093,EDF LUMINUS,Villers 3 (Verlaine),2,50.598672,5.299979,Senvion,MM92,En fonction
+Verlaine - Villers-le-Bouillet4,Verlaine - Villers-le-Bouillet,3093,EDF LUMINUS,Villers 3 (Verlaine),2,50.597597,5.274362,Senvion,MM92,En fonction
+Villers-le-Bouillet,Villers-le-Bouillet,100,EDF LUMINUS,Villers 1,1.5,50.581808,5.219737,Senvion,MD77,En fonction
+Villers-le-Bouillet1,Villers-le-Bouillet,100,EDF LUMINUS,Villers 1,1.5,50.583636,5.226746,Senvion,MD77,En fonction
+Villers-le-Bouillet2,Villers-le-Bouillet,100,EDF LUMINUS,Villers 1,1.5,50.585464,5.233642,Senvion,MD77,En fonction
+Villers-le-Bouillet3,Villers-le-Bouillet,100,EDF LUMINUS,Villers 1,1.5,50.587323,5.24109,Senvion,MD77,En fonction
+Villers-le-Bouillet4,Villers-le-Bouillet,100,EDF LUMINUS,Villers 1,1.5,50.583082,5.245573,Senvion,MD77,En fonction
+Villers-le-Bouillet5,Villers-le-Bouillet,100,EDF LUMINUS,Villers 1,1.5,50.578293,5.246402,Senvion,MD77,En fonction
+Villers-le-Bouillet6,Villers-le-Bouillet,100,EDF LUMINUS,Villers 2 (Wanze - Vinalmont),1.5,50.575026,5.240807,Senvion,MD77,En fonction
+Villers-le-Bouillet7,Villers-le-Bouillet,100,EDF LUMINUS,Villers 2 (Wanze - Vinalmont),1.5,50.57302,5.233668,Senvion,MD77,En fonction
+Waimes - Chivremont,Waimes - Chivremont,7930,MOBILAE,WAIMES (Hoqugné - Chivremont),2.3,50.407632,6.090069,Enercon,E82,En fonction
+Waimes - Chivremont1,Waimes - Chivremont,7930,MOBILAE,WAIMES (Hoqugné - Chivremont),2.3,50.405409,6.094435,Enercon,E82,En fonction
+Waimes - Chivremont2,Waimes - Chivremont,7930,MOBILAE,WAIMES (Hoqugné - Chivremont),2.3,50.403766,6.099722,Enercon,E82,En fonction
+Waimes - Chivremont3,Waimes - Chivremont,7930,MOBILAE,WAIMES (Hoqugné - Chivremont),2.3,50.402915,6.104925,Enercon,E82,En fonction
+Waimes - Chivremont4,Waimes - Chivremont,7930,MOBILAE,WAIMES (Hoqugné - Chivremont),2.3,50.410684,6.089898,Enercon,E82,En fonction
+Walcourt,Walcourt,121,EDF LUMINUS,Walcourt,1.5,50.303708,4.494442,Senvion,MD77,En fonction
+Walcourt1,Walcourt,121,EDF LUMINUS,Walcourt,1.5,50.305019,4.50423,Senvion,MD77,En fonction
+Walcourt2,Walcourt,121,EDF LUMINUS,Walcourt,1.5,50.309372,4.509816,Senvion,MD77,En fonction
+Walcourt3,Walcourt,121,EDF LUMINUS,Walcourt,1.5,50.296466,4.498339,Senvion,MD77,En fonction
+Walcourt4,Walcourt,121,EDF LUMINUS,Walcourt,1.5,50.29958,4.503892,Senvion,MD77,En fonction
+Walcourt5,Walcourt,121,EDF LUMINUS,Walcourt,1.5,50.303927,4.514432,Senvion,MD77,En fonction
+Walhain - Gembloux,Walhain - Gembloux,0,None,Walhain-Gembloux (Ernage),2.3,50.604016,4.701383,Enercon,E92,En fonction
+Walhain - Gembloux1,Walhain - Gembloux,0,None,Walhain-Gembloux (Ernage),2.3,50.601594,4.705802,Enercon,E92,En fonction
+Walhain - Gembloux2,Walhain - Gembloux,0,None,Walhain-Gembloux (Ernage),2.3,50.601283,4.691801,Enercon,E92,En fonction
+Walhain - Gembloux3,Walhain - Gembloux,0,None,Walhain-Gembloux (Ernage),2.3,50.595856,4.700097,Enercon,E92,En fonction
+Walhain - Gembloux4,Walhain - Gembloux,0,None,Walhain-Gembloux (Ernage),2.3,50.596632,4.692842,Enercon,E92,En fonction
+Walhain - Gembloux5,Walhain - Gembloux,0,None,Walhain-Gembloux (Ernage),2.3,50.591688,4.692653,Enercon,E92,En fonction
+Warisoulx,Warisoulx,7901,Cape Doctor,La Bruyère - Eghezée (Warisoulx),2,50.543406,4.86896,Enercon,E82,En fonction
+Warisoulx1,Warisoulx,7901,Cape Doctor,La Bruyère - Eghezée (Warisoulx),2,50.540915,4.87311,Enercon,E82,En fonction
+Warisoulx2,Warisoulx,7901,Cape Doctor,La Bruyère - Eghezée (Warisoulx),2,50.537856,4.877859,Enercon,E82,En fonction
+Warisoulx3,Warisoulx,7901,Cape Doctor,La Bruyère - Eghezée (Warisoulx),2,50.534214,4.879992,Enercon,E82,En fonction
+Warisoulx4,Warisoulx,7901,Cape Doctor,La Bruyère - Eghezée (Warisoulx),2,50.524742,4.88326,Enercon,E82,En fonction
