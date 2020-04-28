@@ -1,6 +1,4 @@
 from sklearn.model_selection import train_test_split
-from sklearn.base import BaseEstimator
-from sklearn.ensemble import GradientBoostingRegressor
 
 from argparse import ArgumentParser
 

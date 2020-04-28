@@ -166,7 +166,7 @@ if __name__ == '__main__':
     ax.plot(time, y, label='Elia measures')
 
     ax.legend()
-    ax.set_xlabel('Time [UTC]')
+    ax.set_xlabel('Time [CEST]')
     ax.set_ylabel('Power [MW]')
     fig.autofmt_xdate()
 

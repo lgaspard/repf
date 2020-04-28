@@ -30,11 +30,10 @@ if __name__ == '__main__':
                     cmap=cm.get_cmap('tab20', classes_upper_bound))
 
     cbar = fig.colorbar(cs, ax=ax, boundaries=range(classes_upper_bound))
-    cbar.ax.set_ylabel('Wind Turbine Power [MW]')
+    cbar.ax.set_ylabel('Mean wind turbine power [MW]')
 
     ax.set_ylabel('Latitude')
     ax.set_xlabel('Longitude')
-    ax.set_title('Power plants in Wallonia')
 
     plt.tight_layout()
     plt.savefig('../products/pdf/wt_farms.pdf', transparent=True)
