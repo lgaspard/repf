@@ -10,8 +10,7 @@ class QuantileExtraTrees(BaseEstimator):
      - median prediction: .5-quantile regression
      - upper prediction: `self.upper_quantile`-quantile regression
     """
-    
-    def __init__(self, lower_quantile, upper_quantile, n_estimators=100,
+    def __init__(self, lower_quantile=.1, upper_quantile=.9, n_estimators=100,
                  max_features='auto', n_jobs=-1, min_samples_split=10):
         
         super(QuantileExtraTrees, self).__init__()
@@ -21,7 +20,7 @@ class QuantileExtraTrees(BaseEstimator):
         self.upper_quantile = upper_quantile
         self.max_features = max_features
         self.min_samples_split = min_samples_split
-        self.n_jobs=-1
+        self.n_jobs = n_jobs
         
         self.model = ExtraTreesQuantileRegressor(
             max_features=max_features,
@@ -41,9 +40,9 @@ class QuantileExtraTrees(BaseEstimator):
         Returns the prediction for the three quantiles: self.lower_quantile,
         self.upper_quantile and 0.5
         """
-        l = self.model.predict(X, quantile=self.lower_quantile)
-        m = self.model.predict(X, quantile=.5)
-        u = self.model.predict(X , quantile=self.upper_quantile)
+        l = self.model.predict(X, quantile=100 * self.lower_quantile)
+        m = self.model.predict(X, quantile=50)
+        u = self.model.predict(X , quantile=100 * self.upper_quantile)
         return l, m, u
     
     def get_params(self, deep=False):
@@ -85,9 +84,8 @@ class QuantileGradientBoosting(BaseEstimator):
      - self.upper: a quantile gradient boosting for the upper quantile
      - self.mean: a least-square gradient boosting
     """
-
-    def __init__(self, lower_quantile, upper_quantile, n_estimators=100,
-                 learning_rate=.1):
+    def __init__(self, lower_quantile=.1, upper_quantile=.9, n_estimators=100,
+                 learning_rate=.1, subsample=1.):
 
         super(QuantileGradientBoosting, self).__init__()
 
@@ -95,18 +93,22 @@ class QuantileGradientBoosting(BaseEstimator):
         self.lower_quantile = lower_quantile
         self.upper_quantile = upper_quantile
         self.learning_rate = learning_rate
+        self.subsample = subsample
 
         self.lower = GradientBoostingRegressor(loss='quantile',
                                                alpha=lower_quantile,
                                                n_estimators=n_estimators,
-                                               learning_rate=learning_rate)
+                                               learning_rate=learning_rate,
+                                               subsample=subsample)
         self.upper = GradientBoostingRegressor(loss='quantile',
                                                alpha=upper_quantile,
                                                n_estimators=n_estimators,
-                                               learning_rate=learning_rate)
+                                               learning_rate=learning_rate,
+                                               subsample=subsample)
         self.mean = GradientBoostingRegressor(loss='ls', criterion='mse',
                                               n_estimators=n_estimators,
-                                              learning_rate=learning_rate)
+                                              learning_rate=learning_rate,
+                                              subsample=subsample)
 
     def fit(self, X, y):
         """
@@ -132,7 +134,8 @@ class QuantileGradientBoosting(BaseEstimator):
             'n_estimators': self.n_estimators,
             'lower_quantile': self.lower_quantile,
             'upper_quantile': self.upper_quantile,
-            'learning_rate': self.learning_rate
+            'learning_rate': self.learning_rate,
+            'subsample': self.subsample
         }
         if deep:
             params = {**params, **self.lower.get_params(deep=deep),
@@ -157,4 +160,8 @@ class QuantileGradientBoosting(BaseEstimator):
             self.lower.set_params(learning_rate=self.learning_rate)
             self.upper.set_params(learning_rate=self.learning_rate)
             self.mean.set_params(learning_rate=self.learning_rate)
+        if 'subsample' in kwargs:
+            self.lower.set_params(subsample=self.subsample)
+            self.upper.set_params(subsample=self.subsample)
+            self.mean.set_params(subsample=self.subsample)
         return self

@@ -108,7 +108,7 @@ if __name__ == '__main__':
     ax.plot(time, y_pred, label='Forecast')
     ax.plot(time, f, label='Elia Forecast')
     ax.fill_between(time, y_lower, y_upper, alpha=.3)
-    ax.set_xlabel('Time [UTC]')
+    ax.set_xlabel('Time [CEST]')
     ax.set_ylabel('Power [MW]')
     ax.legend()
     fig.autofmt_xdate()
