@@ -28,7 +28,7 @@ os.makedirs(PLOT_PATH, exist_ok=True)
 
 
 def MAE(y_true, y_pred):
-    '''
+    """
     Returns the mean aboslute error bewteen `y_true` and `y_pred`.
 
     Arguments
@@ -37,12 +37,12 @@ def MAE(y_true, y_pred):
         true values
      - y_pred: numpy.array
         predicted values
-    '''
+    """
     return mean_absolute_error(y_true, y_pred)
 
 
 def nMAE(y_true, y_pred):
-    '''
+    """
     Returns the normalized mean aboslute error bewteen `y_true` and `y_pred`.
     Normalized means that it is divided by the maximum values observed on the 
     true data.
@@ -53,12 +53,12 @@ def nMAE(y_true, y_pred):
         true values
      - y_pred: numpy.array
         predicted values
-    '''
+    """
     return MAE(y_true, y_pred) / MAX_POWER
 
 
 def MQL(y_true, q_pred, a):
-    '''
+    """
     Returns the mean quantile loss for `a`-quantile `y_pred` and true value
     `y_true`.
 
@@ -70,39 +70,42 @@ def MQL(y_true, q_pred, a):
         predicted quantile
      - a: float
         quantile level
-    '''
+    """
     multiplier = [a if y < q else 1 - a for y, q in zip(y_true, q_pred)]
     return np.mean(multiplier * np.abs(y_true - q_pred))
 
 
-def model_performance(y, y_lower, y_pred, y_upper, lower_q, upper_q):
-    '''
-    Returns a string that summarizes the MAE, nMAE, and MQL for the upper and
+def performance_summary(model, X_test, y_test):
+    """
+    Print a string that summarizes the MAE, nMAE, and MQL for the upper and
     lower quantiles.
 
     Arguments
     =========
-     - y_true: numpy.array
-        true values
-     - y_lower: numpy.array
-        predicted lower quantile
-     - y_pred: numpy.array
-        predicted values
-     - y_upper: numpy.array
-        predicted upper quantile
-     - lower_q: float
-        lower quantile level
-     - upper_q: float
-        upper quantile level
-    '''
-    return ('MAE  : {:.2f} MW\n'.format(MAE(y, y_pred)) +
-            'nMAE : {:.2f} %\n'.format(100 * nMAE(y, y_pred)) +
-            'MQL10: {:.2f} MW\n'.format(MQL(y, y_lower, lower_q)) +
-            'MQL90: {:.2f} MW'.format(MQL(y, y_upper, upper_q)))
+     - model: sklearn.base.BaseEstimator with `predict` method
+        should have parameters `lower_quantile` and `upper_quantile`, and
+        returns the prediction under the format (lower, pred, upper)
+     - X_test: numpy.array
+        the test set features
+     - y_test: numpy.array
+        the test set true values
+    """
+    model_name = type(model).__name__
+    print(model_name + '\n' + '=' * len(model_name))
+
+    params = model.get_params()
+    lower_q = params['lower_quantile']
+    upper_q = params['upper_quantile']
+
+    y_lower, y_pred, y_upper = model.predict(X_test)
+    print('MAE  : {:.2f} MW\n'.format(MAE(y_test, y_pred)) +
+          'nMAE : {:.2f} %\n'.format(100 * nMAE(y_test, y_pred)) +
+          'MQL10: {:.2f} MW\n'.format(MQL(y_test, y_lower, lower_q)) +
+          'MQL90: {:.2f} MW\n'.format(MQL(y_test, y_upper, upper_q)))
 
 
 def sort_all(array, *arrays):
-    '''
+    """
     Sorts all array and all the arrays in `arrays` according to the order of 
     `array`.
 
@@ -112,7 +115,7 @@ def sort_all(array, *arrays):
         array to use as ordering array
      - arrays: list of numpy.array
         arrays to sort in the same order as `array`
-    '''
+    """
     indexes = np.argsort(array)
     return (array[indexes],) + tuple(a[indexes] for a in arrays)
 
@@ -143,7 +146,7 @@ if __name__ == '__main__':
     lower_q = params['lower_quantile']
     upper_q = params['upper_quantile']
 
-    print(model_performance(y, y_lower, y_pred, y_upper, lower_q, upper_q))
+    performance_summary(qgb, X, y)
 
     # Plot the results
     fig, ax = plt.subplots()

@@ -46,7 +46,7 @@ os.makedirs(CACHE_PATH, exist_ok=True)
 
 
 def air_density_(T, h, p):
-    '''
+    """
     Compute the theoretic air density from the temperature, humidity fraction,
     and pressure. The air density is returned in kg/m3.
 
@@ -58,7 +58,7 @@ def air_density_(T, h, p):
         humidity fraction (between 0. and 1.)
      - p: pressure
         pressure in Pascal
-    '''
+    """
     m_water = 0.018016  # water molar mass (kg/mol)
     m_air = 0.0289654   # water molar mass (kg/mol)
     R = 8.314           # universal gas constant (J/(K mol))
@@ -72,7 +72,7 @@ def air_density_(T, h, p):
 
 
 def request_darksky_(loc, date, api_key, verbose=True):
-    '''
+    """
     Request the weather infos in `INFOS` and the air density to darksky, for
     the 24 hours of the day `date`. Returns the results in a pandas DataFrame.
 
@@ -86,7 +86,7 @@ def request_darksky_(loc, date, api_key, verbose=True):
         a valid API key for the darkski API
      - verbose: bool
         whether to print errors and successful calls
-    '''
+    """
     # Generate request URL
     ts = lt.dt_from_date(date, end=False, timestamp=True)
     lat, lon = loc
@@ -132,7 +132,7 @@ def request_darksky_(loc, date, api_key, verbose=True):
 
 def cache_measures_between(loc, start, end, api_keys=API_KEYS[:-1],
                            verbose=True):
-    '''
+    """
     Cache the weather measures between `start` and `end` at the location `loc`.
 
     Arguments
@@ -147,7 +147,7 @@ def cache_measures_between(loc, start, end, api_keys=API_KEYS[:-1],
         a list of valid API key for the darkski API
      - verbose: bool
         whether to print errors and successful calls
-    '''
+    """
     if start > end or end >= dt.date.today():
         raise ValueError('`start` should be before `end`, `end` should be '
                          'before today')
@@ -207,7 +207,7 @@ def cache_measures_between(loc, start, end, api_keys=API_KEYS[:-1],
 
 def cache_all_measures_between(start, end=None, api_keys=API_KEYS[:-1],
                                verbose=True):
-    '''
+    """
     Cache the weather measures between `start` and `end` at all the locations
     in the cached wind farms locations.
 
@@ -223,7 +223,7 @@ def cache_all_measures_between(start, end=None, api_keys=API_KEYS[:-1],
         a list of valid API key for the darkski API
      - verbose: bool
         whether to print errors and successful calls
-    '''
+    """
     batch_size = 30
     locs = wind_farms.get_farms_loc()
 
@@ -248,7 +248,7 @@ def cache_all_measures_between(start, end=None, api_keys=API_KEYS[:-1],
 
 
 def get_cached_measures(loc, start=None, end=None):
-    '''
+    """
     Returns a DataFrame for location `loc` constituted of the cached data
     using `cache_measures_between`. If `start` or `end` are outside of the
     cached data, the index is extended and the DataFrame contains na values.
@@ -262,7 +262,7 @@ def get_cached_measures(loc, start=None, end=None):
         start date (included), if None, the first date of the cached data
      - end: datetime.date
         end date (included), if None, the last date of the cached data
-    '''
+    """
     lat, lon = loc
     cache = CACHE_MEASURES.format(lat, lon)
     if not os.path.isfile(cache):
@@ -289,7 +289,7 @@ def get_cached_measures(loc, start=None, end=None):
 
 
 def cache_forecast_tomorrow(loc, api_key=API_KEYS[-1], verbose=True):
-    '''
+    """
     Cache the weather forecast for tomorrow at the location `loc`. Should be
     called automatically each day at the same time of the day in order to
     constitute constitent dataset of weather forecastings.
@@ -302,7 +302,7 @@ def cache_forecast_tomorrow(loc, api_key=API_KEYS[-1], verbose=True):
         a valid API key for the darkski API
      - verbose: bool
         whether to comment on the cached data
-    '''
+    """
     lat, lon = loc
     cache = CACHE_FORECAST.format(lat, lon)
     if os.path.isfile(cache):
@@ -321,7 +321,7 @@ def cache_forecast_tomorrow(loc, api_key=API_KEYS[-1], verbose=True):
 
 
 def cache_all_forecast_tomorrow(api_key=API_KEYS[:-1], verbose=True):
-    '''
+    """
     Cache the weather forecast for all wind farms locations from the cached
     locations.
 
@@ -331,7 +331,7 @@ def cache_all_forecast_tomorrow(api_key=API_KEYS[:-1], verbose=True):
         a valid API key for the darkski API
      - verbose: bool
         whether to comment on the cached data
-    '''
+    """
     locs = wind_farms.get_farms_loc()
 
     for loc in zip(locs['lat'], locs['lon']):
@@ -342,14 +342,14 @@ def cache_all_forecast_tomorrow(api_key=API_KEYS[:-1], verbose=True):
 
 
 def get_cached_forecast(loc):
-    '''
+    """
     Returns the cached weather forecasts for the location `loc`.
 
     Arguments
     =========
      - loc: 2-tuple
         location of the measure under the format (lat, lon)
-    '''
+    """
     lat, lon = loc
     cache = CACHE_FORECAST.format(lat, lon)
     if not os.path.isfile(cache):
@@ -361,7 +361,7 @@ def get_cached_forecast(loc):
 
 def get_weather_between(loc, start=None, end=None, api_key=API_KEYS[-3],
                         verbose=False):
-    '''
+    """
     Request the measures or the forecast (`start` and `end` can be after today)
     from darksky between `start` and `end` for the considered power source.
 
@@ -379,7 +379,7 @@ def get_weather_between(loc, start=None, end=None, api_key=API_KEYS[-3],
         a valid API key for the darkski API
      - verbose: bool
         whether to comment on the cached data
-    '''
+    """
     if start is None and end is None:
         start = dt.date.today()
         end = start

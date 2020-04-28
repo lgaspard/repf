@@ -17,15 +17,14 @@ CACHE_LS = CACHE_PATH + 'learning_set.csv'
 CACHE_TS = CACHE_PATH + 'test_set.csv'
 PLOT_PATH = '../products/pdf/'
 
-RELEVANT_VARIABLES = ['wind_speed', 'wind_gust']
-
 # Setup
 os.makedirs(CACHE_PATH, exist_ok=True)
 os.makedirs(PLOT_PATH, exist_ok=True)
 
 
-def cache_learning_set(show_na=True, test_set=False):
-    '''
+def cache_learning_set(show_na=True, test_set=False,
+                       variables=['wind_speed', 'wind_gust']):
+    """
     Cache the learning set using the cached weather data and cached wind power
     data.
 
@@ -36,7 +35,7 @@ def cache_learning_set(show_na=True, test_set=False):
      - test_set: bool
         whether to generate the test set with the cached weather forecast
         instead of the learning set with the cached weather measures
-    '''
+    """
     elia = power.get_cached_measures('wind')[['measured', 'day_ahead']]
 
     # Aggregation of the elia data to each hour, as the weather is hourly
@@ -52,7 +51,7 @@ def cache_learning_set(show_na=True, test_set=False):
             new_data = wind_weather.get_cached_forecast((lat, lon))
         else:
             new_data = wind_weather.get_cached_measures((lat, lon))
-        weather = pd.concat((weather, new_data[RELEVANT_VARIABLES]), axis=1)
+        weather = pd.concat((weather, new_data[variables]), axis=1)
 
     learning_set = pd.concat((weather, elia), axis=1)
 
@@ -71,6 +70,7 @@ def cache_learning_set(show_na=True, test_set=False):
         ax.xaxis.set_label_position('top')
         plt.tight_layout()
         plt.savefig(PLOT_PATH + 'na.pdf')
+        plt.show()
 
     # Drop rows with missing values
     n_na = learning_set.isna().any(axis=1).sum()
@@ -87,7 +87,7 @@ def cache_learning_set(show_na=True, test_set=False):
 
 
 def get_learning_set(test_set=False, elia_forecast=False):
-    '''
+    """
     Returns the cached learning set in numpy arrays: X, y, t, and optionally 
     f, the forecast of elia.
 
@@ -98,7 +98,7 @@ def get_learning_set(test_set=False, elia_forecast=False):
         of the learning set with cached weather measures
      - elia_forecast: bool
         whether to return elia forecast alongside
-    '''
+    """
     if not os.path.isfile(CACHE_LS):
         raise FileNotFoundError('The requested data has not been cached, '
                                 'consider using `cache_learning_set`')
@@ -119,15 +119,15 @@ def get_learning_set(test_set=False, elia_forecast=False):
 
 
 def cache_test_set():
-    '''
+    """
     Wrapper to cache the test set with weather forecast instead of the
     learning set with weather measures.
-    '''
+    """
     cache_learning_set(show_na=False, test_set=True)
 
 
 def get_test_set(elia_forecast=False):
-    '''
+    """
     Wrapper to get the test set with weather forecast instead of the learning
     set with weather measures.
 
@@ -135,12 +135,13 @@ def get_test_set(elia_forecast=False):
     =========
      - elia_forecast: bool
         whether to return elia forecast alongside
-    '''
+    """
     return get_learning_set(test_set=True, elia_forecast=elia_forecast)
 
 
-def get_forecasting_set(start, end, elia_forecast=False):
-    '''
+def get_forecasting_set(start, end, elia_forecast=False,
+                        variables=['wind_speed', 'wind_gust']):
+    """
     Returns the inputs, and optionally the forecast of elia, in order to
     produce forecast based on this input.
 
@@ -152,7 +153,7 @@ def get_forecasting_set(start, end, elia_forecast=False):
         end date (included)
      - elia_forecast: bool
         whether to return elia forecast alongside
-    '''
+    """
     elia = power.get_power_between('wind', start, end)['most_recent']
 
     # Aggregation of the elia data to each hour, as the weather is hourly
@@ -168,7 +169,7 @@ def get_forecasting_set(start, end, elia_forecast=False):
         new_data = wind_weather.get_weather_between((lat, lon), start, end,
                                                     verbose=True)
         # Use only relevant variables
-        weather = pd.concat((weather, new_data[RELEVANT_VARIABLES]), axis=1)
+        weather = pd.concat((weather, new_data[variables]), axis=1)
 
     learning_set = pd.concat((weather, elia), axis=1)
     learning_set.dropna(inplace=True)

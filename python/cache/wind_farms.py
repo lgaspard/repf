@@ -8,6 +8,7 @@ import re
 import sys
 sys.path.append('cache')
 
+
 # Constants
 WT_MODELS = '../resources/csv/wt_models.csv'
 WT_LIST = '../resources/csv/wt_list.csv'
@@ -31,11 +32,11 @@ def nb_from_speed_(x):
 
 
 def cache_wt_specs():
-    '''
+    """
     Cache the wind turbines specifications available from the website
     `wind-turbines-models.com` using the list of wind turbines models in
     wallonia and the appropriate to the data sheet on the website.
-    '''
+    """
     if os.path.isfile(CACHE_WT_SPECS):
 
         # Retrieve what has already been cached
@@ -116,9 +117,9 @@ def cache_wt_specs():
 
 
 def get_wt_specs():
-    '''
+    """
     Returns the cached wind turbines characteristics.
-    '''
+    """
     if not os.path.isfile(CACHE_WT_SPECS):
         raise FileNotFoundError('The requested data has not been cached, '
                                 'consider using `cache_wt_specs`')
@@ -127,9 +128,9 @@ def get_wt_specs():
 
 
 def cache_farms_loc():
-    '''
+    """
     Cache the wind farms locations using the list of wind turbines in wallonia.
-    '''
+    """
     # List of all wind turbines
     cols = ['power_plant', 'lat', 'lon']
     wt_list = pd.read_csv(WT_LIST, usecols=cols)
@@ -148,9 +149,9 @@ def cache_farms_loc():
 
 
 def get_farms_loc():
-    '''
+    """
     Returns the cached wind farms locations.
-    '''
+    """
     if not os.path.isfile(CACHE_FARMS_LOC):
         raise FileNotFoundError('The requested data has not been cached, '
                                 'consider using `cache_farms_loc`')

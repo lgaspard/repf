@@ -29,12 +29,12 @@ os.makedirs(RESULTS_PATH, exist_ok=True)
 
 
 def create_daily_forecast():
-    '''
+    """
     Cache a history of daily forecast made at midnight for the following day
     (24 hours to 48 hours later). Furthermore, adds the measurements of the
     past days to the history. Should be called automatically each day in order
     to provide a complete daily forecast history.
-    '''
+    """
     today = dt.date.today()
     tomorrow = today + dt.timedelta(days=1)
     yesterday = today - dt.timedelta(days=1)

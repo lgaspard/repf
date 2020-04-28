@@ -51,7 +51,7 @@ os.makedirs(CACHE_PATH, exist_ok=True)
 
 
 def request_elia_(power_source, ts_start, ts_end, verbose=False):
-    '''
+    """
     Request the desired data to Elia, between the timestamps ts_start and
     ts_end, for `power_source`. Returns it in a pandas DataFrame.
 
@@ -66,7 +66,7 @@ def request_elia_(power_source, ts_start, ts_end, verbose=False):
         end timestamp, the corresponding date is included
      - verbose: bool
         whether to comment on the requests results
-    '''
+    """
     start = lt.date_from_ts(ts_start)
     end = lt.date_from_ts(ts_end)
 
@@ -94,7 +94,7 @@ def request_elia_(power_source, ts_start, ts_end, verbose=False):
 
 
 def cache_measures_between(power_source, start, end=None, verbose=True):
-    '''
+    """
     Cache the measures from elia between `start` and `end` for the considered
     power source. If end is None, cache until yesterday.
 
@@ -109,7 +109,7 @@ def cache_measures_between(power_source, start, end=None, verbose=True):
         end date (included), should be before today
      - verbose: bool
         whether to comment on the number of non retrieved entries
-    '''
+    """
     if power_source != 'wind' and power_source != 'solar':
         raise ValueError('`power_source` should be either `solar` or `wind`')
 
@@ -175,7 +175,7 @@ def cache_measures_between(power_source, start, end=None, verbose=True):
 
 
 def get_cached_measures(power_source, start=None, end=None):
-    '''
+    """
     Returns a DataFrame for `power_source` constituted of the data cached using
     `cache_measures_between`. If `start` or `end` are outside of the cached
     data, the index is extended and the DataFrame contains na values.
@@ -189,7 +189,7 @@ def get_cached_measures(power_source, start=None, end=None):
         start date (included), if None, the first date of the cached data
      - end: datetime.date
         end date (included), if None, the last date of the cached data
-    '''
+    """
     if power_source != 'wind' and power_source != 'solar':
         raise ValueError('`power_source` should be either `solar` or `wind`')
 
@@ -219,7 +219,7 @@ def get_cached_measures(power_source, start=None, end=None):
 
 
 def get_power_between(power_source, start=None, end=None):
-    '''
+    """
     Request the measures or the forecast (`start` and `end` can be after today)
     from elia between `start` and `end` for the considered power source.
 
@@ -234,7 +234,7 @@ def get_power_between(power_source, start=None, end=None):
         day from which to request data
      - end: datetime.date
         day until which to request data
-    '''
+    """
     if power_source != 'wind' and power_source != 'solar':
         raise ValueError('`power_source` should be either `solar` or `wind`')
 

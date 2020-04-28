@@ -17,9 +17,9 @@ Both caches present in the computational flow can be updated using the following
 
 ## Wind Power Forecasting
 
-The interface is composed of:
- - `wind_eval.py [-h] [--forecast]`: **evaluate the current cached model** on the validation set, or the test set if the `--forecast` option is used.
+The following scripts are available. The first us to forecast the wind power that will be produced today and tomorrow in the whole Wallonia, and the second assess the final model built.
  - `wind_forecast.py [-h] [--display]`: **forecast the wind power production** for today and tomorrow, using live weather prediction.
+ - `wind_eval.py [-h] [--forecast]`: **evaluate the current cached model** on the validation set, or the test set if the `--forecast` option is used.
 
  The different caches of the computation flow can be updated using the following scripts:
 
