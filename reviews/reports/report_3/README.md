@@ -18,19 +18,19 @@ This last improvement seemed to help decreasing the underestimating trend of our
 
 Below are figures comparing the previous and new model with respect to the true power production.
 
-![](resources/png/graph_1.png)
+![](resources\png\graph_1.png)
 
-![](resources/png/graph_2.png)
+![](resources\png\graph_2.png)
 
-![](resources/png/graph_3.png)
+![](resources\png\graph_3.png)
 
-![](resources/png/graph_4.png)
+![](resources\png\graph_4.png)
 
 ### Issues with the current model
 
 As can be noticed on the updated model, some power peaks are present at the end of the day (roughly around 6 o'clock). This seems strange since it corresponds to a period where the sun is setting, and the irradiance should thus not be as high as it was in the middle of the day. We can confirm (or rather infirm) this hypothesis by looking at the irradiance for that particular period of time.
 
-![](resources/png/graph_5.png)
+![](resources\png\graph_5.png)
 
 The problem seems to have another source. The only possibility is that it comes from the newly introduced parameter: the sine of the sun's altitude. Since our power formula is given by (without taking into account temperature or maximum power, which have no influence on this issue)
 
@@ -40,15 +40,15 @@ $$
 
 we can think of plotting the cosine and sine respectively, as well as their ratio.
 
-![](resources/png/graph_6.png)
+![](resources\png\graph_6.png)
 
 We see that we have some weird behavior at night. This is simply due to the fact that the power measures made at the Sart-Tilman stop roughly at night. Hence, since we consider a time series corresponding to the moments where measures are recorded, we do not consider night periods in our time series, and thus nor in our sine and cosine.
 
-![](resources/png/graph_7.png)
+![](resources\png\graph_7.png)
 
 From these figures, we can clearly see that, at the period where the peaks appear (around 8 o'clock), the sine and cosine are both positive (meaning the sun is rising and is no longer behind the panels) but very small. We also have peaks at night when both are negative (meaning the sun has set and is no longer facing the panels), and this is handled by forcing the production to be equal to zero when it is the case. The inverse is not true, but is not such a big deal.
 
-![](resources/png/graph_8.png)
+![](resources\png\graph_8.png)
 
 ### New source of data
 
@@ -72,7 +72,7 @@ where $A$ is the average photovoltaic area ($m^2$), $I$ is the radiation ($W/m^2
 
 For the example models, $\eta$ has been arbitrarily set to 0.15. The idea is to compare the computed power (for any time period) with the measures done by [Elia][Elia]. An important remark is that we don't know with full certainty what the measures done by Elia correspond to, but we assumed that they corresponded to the power produced by the photovoltaic panels and reinjected in the network, while the power we compute corresponds to the whole production potential. The following figure was obtained.
 
-![](resources/png/graph_9.png)
+![](resources\png\graph_9.png)
 
 ### What should be done in the future
 
@@ -100,7 +100,7 @@ Eventually, we found a suitable learning set : [Distributed Solar Photovoltaic A
 
 This dataset contains the geospatial coordinates and border vertices for over `19 000` solar panels across `601` high resolution (`5000x5000`) images from four cities in California.
 
-![](resources/png/modesto.png)
+![](resources\png\modesto.png)
 
 > Modesto city, zoomed 10 times
 
@@ -109,7 +109,7 @@ The geospatial coordinates are very precise and provided as polygon **vertices**
 1. transform the polygons into black and white *classification* images. These will be very handy in the training phase.
 2. slice the images into smaller images (`256x256`) as most neural networks cannot work at full resolution.
 
-![](resources/png/classification.png)
+![](resources\png\classification.png)
 
 #### Data augmentation
 
@@ -151,7 +151,7 @@ It is important to note that this model uses the wind data at a single location 
 
 ### First results
 
-![Day-ahead wind power production using last year as training data](resources/png/grpah_10.png)
+![Day-ahead wind power production using last year as training data](resources\png\grpah_10.png)
 
 ### Future models
 

@@ -64,38 +64,42 @@ However, it should be noted that the production measures of [Elia][Elia] and [AP
 
 ## Acquired data
 
+[acquired-no]: https://img.shields.io/badge/Acquired-No-Red.svg
+[acquired-yes]: https://img.shields.io/badge/Acquired-Yes-Green.svg
+[acquired-asked]: https://img.shields.io/badge/Acquired-Asked-Orange.svg
+
 ### Weather data and weather forecast
 
 - [Laboratoire de Climatologie de l'Uliège][Climato]
     - Measures near B11 building, Sart-Tilman
-        - Solar flow and forecast (May - October 2019)
-        -  Temperatures and forecast (May - October 2019)
+        - Solar flow and forecast (May - October 2019) ![][acquired-yes]
+        -  Temperatures and forecast (May - October 2019) ![][acquired-yes]
     - Measures at Sart-Tilman Sud
-        - Solar flow, temperatures and forecast (August - November 2019)
-- Weather data from the [Thermodynamics Laboratory from the Aerospace and Mechanical Engineering Department of Liège University][Thermo] 
-- Public API's [OpenWeatherMap][OpenWeatherMap]
+        - Solar flow, temperatures and forecast (August - November 2019) ![][acquired-yes]
+- Weather data from the [Thermodynamics Laboratory from the Aerospace and Mechanical Engineering Department of Liège University][Thermo]  ![][acquired-yes]
+- Public API's [OpenWeatherMap][OpenWeatherMap] ![][acquired-no]
 
 ### Production of photovoltaic panels
 
-- Production of the photovoltaic panels of the *Grands Amphitéatres*' parkings (MySQL access to real time and past data)
+- Production of the photovoltaic panels of the *Grands Amphitéatres*' parkings (MySQL access to real time and past data) ![][acquired-yes]
 
 ### Number and position of wind turbine
 
-- All recorded wind farms from [Elia][Elia]
+- All recorded wind farms from [Elia][Elia] ![][acquired-yes]
 - Data from each electricity supplier having wind turbines:
-    - List of electricity suppliers
-    - Data from each supplier
+    - List of electricity suppliers ![][acquired-yes]
+    - Data from each supplier ![][acquired-no]
 
 ### Number and position of photovoltaic panels
 
-- Number of photovoltaic panels and installed power per municipality
-  
+- Number of photovoltaic panels and installed power per municipality [![acquired-yes]](https://www.cwape.be/docs/?doc=1529)
+    
     > Two years old, no data on the orientation and tilt 
 
 ### National and regional renewable energy production
 
-- PV power every 15 minutes from [Elia][Elia] or [APERe][APERe]
-- Wind power every 15 minutes from [Elia][Elia] or [APERe][APERe] 
+- PV power every 15 minutes from [Elia][Elia] ![][acquired-asked] or [APERe][APERe] ![][acquired-asked]
+- Wind power every 15 minutes from [Elia][Elia] ![][acquired-asked] or [APERe][APERe] ![][acquired-asked] 
 
 [Elia]: https://www.elia.be/
 [APERe]: http://www.apere.org/
