@@ -1,6 +1,7 @@
 from sklearn.metrics import mean_absolute_error
 
 import numpy as np
+import time
 
 import sys
 sys.path.append('cache')
@@ -59,7 +60,7 @@ def MQL(y_true, q_pred, a):
     return np.mean(multiplier * np.abs(y_true - q_pred))
 
 
-def performance_summary(model, X_test, y_test):
+def performance_summary(model, X_test, y_test, return_pred=False):
     """
     Print a string that summarizes the MAE, nMAE, and MQL for the upper and
     lower quantiles.
@@ -81,9 +82,15 @@ def performance_summary(model, X_test, y_test):
     lower_q = params['lower_quantile']
     upper_q = params['upper_quantile']
 
+    start = time.time()
     y_lower, y_pred, y_upper = model.predict(X_test)
+    elapsed = time.time() - start
     
     print('MAE  : {:.2f} MW\n'.format(MAE(y_test, y_pred)) +
           'nMAE : {:.2f} %\n'.format(100 * nMAE(y_test, y_pred)) +
           'MQL10: {:.2f} MW\n'.format(MQL(y_test, y_lower, lower_q)) +
-          'MQL90: {:.2f} MW\n'.format(MQL(y_test, y_upper, upper_q)))
+          'MQL90: {:.2f} MW\n'.format(MQL(y_test, y_upper, upper_q)) + 
+          '(Predictions computed in {:.0f}s)'.format(elapsed))
+
+    if return_pred:
+        return y_lower, y_pred, y_upper

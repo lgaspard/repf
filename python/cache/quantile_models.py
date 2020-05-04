@@ -1,6 +1,10 @@
 from sklearn.base import BaseEstimator
-from skgarden import ExtraTreesQuantileRegressor
 from sklearn.ensemble import GradientBoostingRegressor
+
+import warnings
+warnings.filterwarnings('ignore')
+from skgarden import ExtraTreesQuantileRegressor
+warnings.filterwarnings('default')
 
 
 class QuantileExtraTrees(BaseEstimator):

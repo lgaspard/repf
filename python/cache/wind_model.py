@@ -16,14 +16,13 @@ from quantile_models import QuantileExtraTrees, QuantileGradientBoosting
 
 # Constants
 CACHE_PATH = '../cache/pkl/'
-CACHE_MODEL_ALL = CACHE_PATH + 'qgb_all.pkl'
-CACHE_MODEL_TRAIN = CACHE_PATH + 'qgb_train.pkl'
+CACHE = CACHE_PATH + '{}_{}.pkl'
 
 # Setup
 os.makedirs(CACHE_PATH, exist_ok=True)
 
 
-def cache_model(train_set_only=False):
+def cache_model(train_set_only=False, model_name='qgb'):
     """
     Cache the QuantileGradientBoosting model. The cached model is either a
     model trained on the whole learning set, or a model trained on 70 % of this
@@ -37,22 +36,29 @@ def cache_model(train_set_only=False):
     X, y, t = wind_ls.get_learning_set()
 
     if train_set_only:
-        filename = CACHE_MODEL_TRAIN
+        train_set = 'train'
         X, _, y, _, t, _ = train_test_split(X, y, t, test_size=.3,
                                             random_state=0)
     else:
-        filename = CACHE_MODEL_ALL
+        train_set = 'all'
 
-    qgb = QuantileGradientBoosting(.1, .9, 500, learning_rate=.1)
-    qgb.fit(X, y)
+    if model_name == 'qxt':
+        model = QuantileExtraTrees(.1, .9, 1000, n_jobs=-1,
+                                   min_samples_split=10)
+    elif model_name == 'qgb':
+        model = QuantileGradientBoosting(.1, .9, 1000, subsample=.7)
+    else:
+        raise NotImplementedError('The SL method has not been implemented yet')
 
-    with open(filename, 'wb') as file:
-        pickle.dump(qgb, file)
+    model.fit(X, y)
+
+    with open(CACHE.format(model_name, train_set), 'wb') as file:
+        pickle.dump(model, file)
 
     print('Model successfully cached')
 
 
-def get_model(train_set_only=False):
+def get_model(train_set_only=False, model_name='qgb'):
     """
     Returns one of the cached models: either the model trained on the whole
     learning set, or the one trained on the train set.
@@ -63,9 +69,9 @@ def get_model(train_set_only=False):
         whether to train on the train set only
     """
     if train_set_only:
-        filename = CACHE_MODEL_TRAIN
+        filename = CACHE.format(model_name, 'train')
     else:
-        filename = CACHE_MODEL_ALL
+        filename = CACHE.format(model_name, 'all')
 
     if not os.path.isfile(filename):
         raise FileNotFoundError('The requested model has not been cached, '
@@ -79,12 +85,13 @@ def get_model(train_set_only=False):
 
 if __name__ == '__main__':
 
-    parser = ArgumentParser(description='Cache the trained Quantile Gradient '
-                                        'model')
+    parser = ArgumentParser(description='Cache the trained Quantile model')
+    parser.add_argument('model', type=str, choices=['qxt', 'qgb'], 
+                        help='name of the model to cache')
     parser.add_argument('--train-set-only', action='store_true',
                         help='Train an alternative model on a train set '
                              'composed of 0.7 of the learning set, for '
                              'evaluation purpose')
     args = parser.parse_args()
 
-    cache_model(train_set_only=args.train_set_only)
+    cache_model(train_set_only=args.train_set_only, model_name=args.model)

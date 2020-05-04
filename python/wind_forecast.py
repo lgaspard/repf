@@ -79,6 +79,8 @@ def create_daily_forecast():
 if __name__ == '__main__':
 
     parser = ArgumentParser(description='Forecast the wind power production')
+    parser.add_argument('model', type=str, choices=['qxt', 'qgb'], 
+                        help='name of the model to evaluate')
     parser.add_argument('--display', action='store_true',
                         help='Whether to display the plot')
     args = parser.parse_args()
@@ -91,8 +93,8 @@ if __name__ == '__main__':
                                                 elia_forecast=True)
 
     # Forecasting
-    qgb = cache.wind_model.get_model()
-    y_lower, y_pred, y_upper = qgb.predict(w)
+    model = cache.wind_model.get_model(model_name=args.model)
+    y_lower, y_pred, y_upper = model.predict(w)
 
     # Total energy produced
     lower_energy = np.trapz(y_lower.reshape((-1, 24)), axis=1)

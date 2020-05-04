@@ -22,7 +22,7 @@ os.makedirs(CACHE_PATH, exist_ok=True)
 os.makedirs(PLOT_PATH, exist_ok=True)
 
 
-def cache_learning_set(show_na=True, test_set=False,
+def cache_learning_set(show_na=True, test_set=False, end=None,
                        variables=['wind_speed', 'wind_gust']):
     """
     Cache the learning set using the cached weather data and cached wind power
@@ -36,7 +36,8 @@ def cache_learning_set(show_na=True, test_set=False,
         whether to generate the test set with the cached weather forecast
         instead of the learning set with the cached weather measures
     """
-    elia = power.get_cached_measures('wind')[['measured', 'day_ahead']]
+    elia = power.get_cached_measures('wind', end=end)
+    elia = elia[['measured', 'day_ahead']]
 
     # Aggregation of the elia data to each hour, as the weather is hourly
     elia = elia.groupby(by=elia.index // 3600).mean()
@@ -193,4 +194,4 @@ if __name__ == '__main__':
     if args.test:
         cache_test_set()
     else:
-        cache_learning_set()
+        cache_learning_set(end=dt.date(2020, 3, 31))

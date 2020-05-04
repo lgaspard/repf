@@ -45,30 +45,34 @@ def sort_all(array, *arrays):
 if __name__ == '__main__':
 
     parser = ArgumentParser(description='Evaluate the cached wind model')
+    parser.add_argument('model', type=str, choices=['qxt', 'qgb'], 
+                        help='name of the model to evaluate')
     parser.add_argument('--forecast', action='store_true',
                         help='Evaluate on weather prediction (test set) '
                              'instead of validation set')
+    parser.add_argument('--residuals', action='store_true',
+                        help='Plot the residuals of the predictions')
     args = parser.parse_args()
 
     if args.forecast:
-        filename = 'eval_forecast_test.pdf'
+        filename = 'wind_eval_{}_test.pdf'.format(args.model, )
         X, y, t, f = cache.wind_ls.get_test_set(elia_forecast=True)
-        qgb = cache.wind_model.get_model(train_set_only=False)
+        model = cache.wind_model.get_model(train_set_only=False,
+                                           model_name=args.model)
     else:
-        filename = 'eval_forecast_valid.pdf'
+        filename = 'wind_eval_{}_valid.pdf'.format(args.model)
         X, y, t, f = cache.wind_ls.get_learning_set(elia_forecast=True)
         _, X, _, y, _, t, _, f = train_test_split(X, y, t, f, test_size=.3,
                                                   random_state=0)
-        qgb = cache.wind_model.get_model(train_set_only=True)
-
-    y_lower, y_pred, y_upper = qgb.predict(X)
+        model = cache.wind_model.get_model(train_set_only=True,
+                                           model_name=args.model)
 
     # Extraction of the parameters and metrics computations
-    params = qgb.get_params()
+    params = model.get_params()
     lower_q = params['lower_quantile']
     upper_q = params['upper_quantile']
 
-    performance_summary(qgb, X, y)
+    y_lower, y_pred, y_upper = performance_summary(model, X, y, return_pred=True)
 
     # Plot the results
     fig, ax = plt.subplots()
@@ -78,14 +82,19 @@ if __name__ == '__main__':
     time, y_pred, y_lower, y_upper, y, f = sort_all(
         time, y_pred, y_lower, y_upper, y, f)
 
-    ax.plot(time, y_pred, label='Forecast')
-    ax.plot(time, y, label='Elia measures')
-    ax.plot(time, f, label='Elia forecast')
+    if args.residuals:
+        ax.plot(time, np.abs(y_pred - y), label='Forecast residuals')
+        ax.plot(time, np.abs(f - y), label='Elia forecast residuals')
+        filename = 'res_' + filename
+    else:
+        ax.plot(time, y_pred, label='Forecast')
+        ax.plot(time, y, label='Elia measures')
+        ax.plot(time, f, label='Elia forecast')
+        ax.fill_between(time, y_lower, y_upper, alpha=.3)
 
-    ax.fill_between(time, y_lower, y_upper, alpha=.3)
     ax.legend()
     ax.set_xlabel('Time [CEST]')
-    ax.set_ylabel('Power [MW]')
+    ax.set_ylabel('Power absolute error [MW]')
     fig.autofmt_xdate()
 
     plt.tight_layout()

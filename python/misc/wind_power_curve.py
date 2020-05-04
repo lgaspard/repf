@@ -22,9 +22,9 @@ if __name__ == '__main__':
     cs = ax.hexbin(mean_wind_speed, power, bins='log', gridsize=(50, 30))
     
     cbar = fig.colorbar(cs, ax=ax)
-    cbar.ax.set_ylabel('Density')
+    cbar.ax.set_ylabel('Sample density')
 
-    ax.set_xlabel('Wind')
+    ax.set_xlabel('Mean wind speed')
     ax.set_ylabel('Power')
     plt.tight_layout()
     plt.savefig('../products/pdf/wallonia_power_curve.pdf')
