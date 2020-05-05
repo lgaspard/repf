@@ -1,4 +1,4 @@
-from sklearn.metrics import mean_absolute_error
+from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 import numpy as np
 import time
@@ -40,6 +40,22 @@ def nMAE(y_true, y_pred):
         predicted values
     """
     return MAE(y_true, y_pred) / MAX_POWER
+
+
+def nRMSE(y_true, y_pred):
+    """
+    Returns the normalized root mean squared error bewteen `y_true` and 
+    `y_pred`. Normalized means that it is divided by the maximum values 
+    observed on the true data.
+
+    Arguments
+    =========
+     - y_true: numpy.array
+        true values
+     - y_pred: numpy.array
+        predicted values
+    """
+    return np.sqrt(mean_squared_error(y_true, y_pred)) / MAX_POWER
 
 
 def MQL(y_true, q_pred, a):
@@ -88,6 +104,7 @@ def performance_summary(model, X_test, y_test, return_pred=False):
     
     print('MAE  : {:.2f} MW\n'.format(MAE(y_test, y_pred)) +
           'nMAE : {:.2f} %\n'.format(100 * nMAE(y_test, y_pred)) +
+          'nRMSE: {:.2f} %\n'.format(100 * nRMSE(y_test, y_pred)) +
           'MQL10: {:.2f} MW\n'.format(MQL(y_test, y_lower, lower_q)) +
           'MQL90: {:.2f} MW\n'.format(MQL(y_test, y_upper, upper_q)) + 
           '(Predictions computed in {:.0f}s)'.format(elapsed))

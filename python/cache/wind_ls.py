@@ -187,11 +187,11 @@ def get_forecasting_set(start, end, elia_forecast=False,
 if __name__ == '__main__':
 
     parser = ArgumentParser(description='Cache the learning set or test set')
-    parser.add_argument('--test', action='store_true',
-                        help='Cache the test set instead of the learning set')
+    parser.add_argument('--forecast', action='store_true',
+                        help='Cache the forecast instead of weather test set')
     args = parser.parse_args()
 
-    if args.test:
+    if args.forecast:
         cache_test_set()
     else:
         cache_learning_set(end=dt.date(2020, 3, 31))

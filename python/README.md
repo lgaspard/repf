@@ -30,9 +30,10 @@ The following scripts are available. The first us to forecast the wind power tha
 | WIND WEATHER MEASURES | `cache/wind_weather.py [--start START] [--end END]` |
 | WIND WEATHER FORECAST | `cache/wind_weather.py --forecast` |
 | LEARNING SET | `cache/wind_ls.py` |
-| TEST SET | `cache/wind_ls.py --test` |
+| TEST SET | `cache/wind_ls.py --forecast` |
 | MODEL | `cache/wind_model.py [--train-set-only] {qxt,qgb}` |
 
 The wind power forecast computation flow is display hereafter.
 
 ![Wind Power Forecast Computation Flow](../resources/png/wind_computation_flow.png)
+

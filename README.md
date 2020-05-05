@@ -11,4 +11,4 @@ Under the direction of *Bertrand Cornelusse*, *Pierre Geurts* and *Gilles Louppe
 
 ---
 
-All codes are described in directory [python](python)
+All codes are described in directory [python](python). All codes should be run from the directory [python](python) (e.g. `python3 wind_eval.py qgb`, `python3 cache/wind_ls.py`)

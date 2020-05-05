@@ -55,7 +55,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     if args.forecast:
-        filename = 'wind_eval_{}_test.pdf'.format(args.model, )
+        filename = 'wind_eval_{}_test.pdf'.format(args.model)
         X, y, t, f = cache.wind_ls.get_test_set(elia_forecast=True)
         model = cache.wind_model.get_model(train_set_only=False,
                                            model_name=args.model)
@@ -72,7 +72,8 @@ if __name__ == '__main__':
     lower_q = params['lower_quantile']
     upper_q = params['upper_quantile']
 
-    y_lower, y_pred, y_upper = performance_summary(model, X, y, return_pred=True)
+    y_lower, y_pred, y_upper = performance_summary(model, X, y,
+                                                   return_pred=True)
 
     # Plot the results
     fig, ax = plt.subplots()
@@ -91,6 +92,8 @@ if __name__ == '__main__':
         ax.plot(time, y, label='Elia measures')
         ax.plot(time, f, label='Elia forecast')
         ax.fill_between(time, y_lower, y_upper, alpha=.3)
+
+    print('Elia\'s MAE: {:.2f}'.format(MAE(f, y)))
 
     ax.legend()
     ax.set_xlabel('Time [CEST]')
