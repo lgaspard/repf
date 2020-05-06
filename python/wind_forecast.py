@@ -85,46 +85,46 @@ def create_daily_forecast():
 
 if __name__ == '__main__':
 
-    # parser = ArgumentParser(description='Forecast the wind power production')
-    # parser.add_argument('model', type=str, choices=['qxt', 'qgb'], 
-    #                     help='name of the model to evaluate')
-    # parser.add_argument('--display', action='store_true',
-    #                     help='Whether to display the plot')
-    # args = parser.parse_args()
+    parser = ArgumentParser(description='Forecast the wind power production')
+    parser.add_argument('model', type=str, choices=['qxt', 'qgb'], 
+                        help='name of the model to evaluate')
+    parser.add_argument('--display', action='store_true',
+                        help='Whether to display the plot')
+    args = parser.parse_args()
 
-    # today = dt.date.today()
-    # tomorrow = today + dt.timedelta(days=1)
+    today = dt.date.today()
+    tomorrow = today + dt.timedelta(days=1)
 
-    # # Retrieve weather predictions
-    # w, t, f = cache.wind_ls.get_forecasting_set(today, tomorrow,
-    #                                             elia_forecast=True)
+    # Retrieve weather predictions
+    w, t, f = cache.wind_ls.get_forecasting_set(today, tomorrow,
+                                                elia_forecast=True)
 
-    # # Forecasting
-    # model = cache.wind_model.get_model(model_name=args.model)
-    # y_lower, y_pred, y_upper = model.predict(w)
+    # Forecasting
+    model = cache.wind_model.get_model(model_name=args.model)
+    y_lower, y_pred, y_upper = model.predict(w)
 
-    # # Total energy produced
-    # lower_energy = np.trapz(y_lower.reshape((-1, 24)), axis=1)
-    # mean_energy = np.trapz(y_pred.reshape((-1, 24)), axis=1)
-    # upper_energy = np.trapz(y_upper.reshape((-1, 24)), axis=1)
-    # print('Lower bound on energy:', lower_energy)
-    # print('Predicted energy:', mean_energy)
-    # print('Upper bound on energy:', upper_energy)
+    # Total energy produced
+    lower_energy = np.trapz(y_lower.reshape((-1, 24)), axis=1)
+    mean_energy = np.trapz(y_pred.reshape((-1, 24)), axis=1)
+    upper_energy = np.trapz(y_upper.reshape((-1, 24)), axis=1)
+    print('Lower bound on energy:', lower_energy)
+    print('Predicted energy:', mean_energy)
+    print('Upper bound on energy:', upper_energy)
 
-    # # Plot
-    # fig, ax = plt.subplots()
-    # time = np.vectorize(dt.datetime.fromtimestamp)(t)
-    # ax.plot(time, y_pred, label='Forecast')
-    # ax.plot(time, f, label='Elia Forecast')
-    # ax.fill_between(time, y_lower, y_upper, alpha=.3)
-    # ax.set_xlabel('Time [CEST]')
-    # ax.set_ylabel('Power [MW]')
-    # ax.legend()
-    # fig.autofmt_xdate()
-    # plt.tight_layout()
-    # plot_filename = 'forecasted_on_{}.pdf'.format(today)
-    # plt.savefig(PLOT_PATH + plot_filename, transparent=True)
-    # if args.display:
-    #     plt.show()
+    # Plot
+    fig, ax = plt.subplots()
+    time = np.vectorize(dt.datetime.fromtimestamp)(t)
+    ax.plot(time, y_pred, label='Forecast')
+    ax.plot(time, f, label='Elia Forecast')
+    ax.fill_between(time, y_lower, y_upper, alpha=.3)
+    ax.set_xlabel('Time [CEST]')
+    ax.set_ylabel('Power [MW]')
+    ax.legend()
+    fig.autofmt_xdate()
+    plt.tight_layout()
+    plot_filename = 'forecasted_on_{}.pdf'.format(today)
+    plt.savefig(PLOT_PATH + plot_filename, transparent=True)
+    if args.display:
+        plt.show()
 
-    create_daily_forecast()
+    # create_daily_forecast()
