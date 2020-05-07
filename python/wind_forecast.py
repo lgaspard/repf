@@ -35,7 +35,7 @@ def create_daily_forecast():
     past days to the history. Should be called automatically each day in order
     to provide a complete daily forecast history.
     """
-    today = dt.date.today()
+    today = dt.date.today() - dt.timedelta(days=0)
     tomorrow = today + dt.timedelta(days=1)
     yesterday = today - dt.timedelta(days=1)
 
@@ -73,7 +73,7 @@ def create_daily_forecast():
     new_results = pd.DataFrame({
         'forecast': y_pred,
         'lower': y_lower,
-        'upper': y_lower,
+        'upper': y_upper,
         'elia_forecast': f
     }, index=[dt.datetime.fromtimestamp(x, tz=dt.timezone.utc) for x in t])
 
