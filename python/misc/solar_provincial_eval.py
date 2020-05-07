@@ -5,12 +5,16 @@ import numpy as np
 import pandas as pd
 import tools.plot_setup
 import matplotlib.pyplot as plt
+import os
 
 import pystan
 
 from cache.power import get_cached_measures, get_power_between
 from datetime import datetime, timedelta, timezone
 
+
+os.makedirs('../products/pdf/', exist_ok=True)
+os.makedirs('../products/txt/', exist_ok=True)
 
 def compute_metrics(true, prediction):
     MSE = ((true - prediction) ** 2).mean()
@@ -195,7 +199,7 @@ if __name__ == '__main__':
         # WARNING: If the file already exists, it will append the computed metrics to that file.
         metrics = np.array([[prior_MSE, prior_RMSE, post_MSE, post_RMSE, elia_MSE,
                              elia_RMSE, base_1_MSE, base_1_RMSE, base_2_MSE, base_2_RMSE]])
-        with open('../products/txt/results_provincial_april.txt', 'a') as f:
+        with open('../products/txt/results_provincial.txt', 'a') as f:
             np.savetxt(f, metrics, delimiter=' ')
 
         # Compare all models

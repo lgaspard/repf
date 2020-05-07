@@ -12,6 +12,8 @@ from cache.power import get_cached_measures, get_power_between
 from solar_provincial import solar_provincial
 from solar_panelwise import solar_panelwise
 
+os.makedirs('../products/csv/', exist_ok=True)
+
 t, forecast_panelwise, lower_panelwise, upper_panelwise = solar_panelwise()
 forecast_provincial, lower_provincial, upper_provincial, elia_forecast = solar_provincial()
 

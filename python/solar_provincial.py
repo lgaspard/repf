@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import tools.plot_setup
 import matplotlib.pyplot as plt
+import os
 
 import pystan
 import pytz
@@ -11,6 +12,8 @@ from cache.power import get_cached_measures, get_power_between
 from cache.solar_weather import cache_irradiance_measures
 from cache.solar_weather import cache_irradiance_forecasts
 
+
+os.makedirs('../products/pdf/', exist_ok=True)
 
 def pystan_model(obs_power, peak_area, eta, obs_irradiance, for_irradiance):
     model = """
