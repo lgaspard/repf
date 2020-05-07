@@ -63,7 +63,7 @@ if __name__ == '__main__':
         filename = 'wind_eval_{}_valid.pdf'.format(args.model)
         X, y, t, f = cache.wind_ls.get_learning_set(elia_forecast=True)
         _, X, _, y, _, t, _, f = train_test_split(X, y, t, f, test_size=.3,
-                                                  random_state=0)
+                                                  random_state=0, shuffle=False)
         model = cache.wind_model.get_model(train_set_only=True,
                                            model_name=args.model)
 

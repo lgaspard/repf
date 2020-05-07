@@ -38,7 +38,7 @@ def cache_model(train_set_only=False, model_name='qgb'):
     if train_set_only:
         train_set = 'train'
         X, _, y, _, t, _ = train_test_split(X, y, t, test_size=.3,
-                                            random_state=0)
+                                            random_state=0, shuffle=False)
     else:
         train_set = 'all'
 
