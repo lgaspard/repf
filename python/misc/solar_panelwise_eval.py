@@ -1,22 +1,23 @@
+import sys
+sys.path.append('.')
+
 import numpy as np
 import pandas as pd
-import plot_setup
+import tools.plot_setup
 import matplotlib.pyplot as plt
 
 import pystan
 import pvlib as pv
 
-import sys
-sys.path.append('.')
-
-from datetime import datetime, timedelta, timezone
 from cache.power import get_cached_measures, get_power_between
+from datetime import datetime, timedelta, timezone
 
 
 def compute_metrics(true, prediction):
     MSE = ((true - prediction) ** 2).mean()
     RMSE = np.sqrt(MSE)
     return MSE, RMSE
+
 
 def hour_angle(times, longitudes, equation_of_time):
     """
@@ -56,7 +57,7 @@ def hour_angle(times, longitudes, equation_of_time):
 
     return np.radians(15. * (hrs_minus_tzs - 12.) +
                       equation_of_time / 4.).values.reshape(-1, 1) + \
-           longitudes.reshape(1, -1)
+        longitudes.reshape(1, -1)
 
 
 def elevation(times, latitudes, longitudes):
@@ -116,11 +117,9 @@ def elevation(times, latitudes, longitudes):
     GMSTi = np.mod(GMST0 + 360 * (1.0027379093 * UnivHr / 24.), 360)
     # =======================
 
-
     # Local apparent sidereal time
-    LocAST = (360 + GMSTi.reshape(-1, 1) + 
+    LocAST = (360 + GMSTi.reshape(-1, 1) +
               np.degrees(longitudes).reshape(1, -1)) % 360
-
 
     # ===== COPY PASTED =====
     EpochDate = Ezero + UnivHr / 24.
@@ -142,7 +141,7 @@ def elevation(times, latitudes, longitudes):
 
     TrueAnom = (
         2 * np.mod(np.degrees(np.arctan2(((1 + Eccen) / (1 - Eccen)) ** 0.5 *
-                   np.tan(np.radians(EccenAnom) / 2.), 1)), 360))
+                                         np.tan(np.radians(EccenAnom) / 2.), 1)), 360))
     EcLon = np.mod(MlPerigee + TrueAnom, 360) - Abber
     EcLonR = np.radians(EcLon)
     DecR = np.arcsin(np.sin(ObliquityR)*np.sin(EcLonR))
@@ -151,13 +150,12 @@ def elevation(times, latitudes, longitudes):
                                     np.cos(EcLonR)))
     # =======================
 
-
     HrAngleR = np.radians(LocAST - RtAscen.reshape(-1, 1))
     DecR = DecR.reshape(-1, 1)
     LatR = latitudes.reshape(1, -1)
 
     return np.arcsin(
-        np.cos(DecR) * np.cos(HrAngleR) * np.cos(LatR) + np.sin(DecR) 
+        np.cos(DecR) * np.cos(HrAngleR) * np.cos(LatR) + np.sin(DecR)
         * np.sin(LatR)
     )
 
@@ -187,7 +185,8 @@ def compute_solar_angles(time_series, latitudes, longitudes, azimuth, beta):
     """
 
     # Compute declination angle (radians)
-    dec = np.array(pv.solarposition.declination_cooper69(time_series.dayofyear)).reshape(-1, 1)
+    dec = np.array(pv.solarposition.declination_cooper69(
+        time_series.dayofyear)).reshape(-1, 1)
 
     # Compute equation of time
     eq_time = pv.solarposition.equation_of_time_pvcdrom(time_series.dayofyear)
@@ -203,12 +202,12 @@ def compute_solar_angles(time_series, latitudes, longitudes, azimuth, beta):
 
     # Compute cosine of incidence angle of sun rays on each panel
     cos_incidence = (np.sin(dec) * np.sin(latitudes) * np.cos(beta)
-                    + np.sin(dec) * np.cos(latitudes) * np.sin(beta) 
-                    * np.cos(azimuth) + np.cos(dec) * np.cos(latitudes) 
-                    * np.cos(beta) * np.cos(h_angle) - np.cos(dec) 
-                    * np.sin(latitudes) * np.sin(beta) * np.cos(azimuth) 
-                    * np.cos(h_angle) - np.cos(dec) * np.sin(beta) 
-                    * np.sin(azimuth) * np.sin(h_angle))
+                     + np.sin(dec) * np.cos(latitudes) * np.sin(beta)
+                     * np.cos(azimuth) + np.cos(dec) * np.cos(latitudes)
+                     * np.cos(beta) * np.cos(h_angle) - np.cos(dec)
+                     * np.sin(latitudes) * np.sin(beta) * np.cos(azimuth)
+                     * np.cos(h_angle) - np.cos(dec) * np.sin(beta)
+                     * np.sin(azimuth) * np.sin(h_angle))
 
     return sin_sun_alt, cos_incidence
 
@@ -226,7 +225,7 @@ def compute_out_power(sin_sun_alt, cos_incidence, areas, irradiance):
         The cosine of the incidence angle on each panel, for all time steps
     areas: array of float
         The area of each panel
-    
+
     Return
     ------
     out_power: array of float
@@ -246,6 +245,7 @@ def compute_out_power(sin_sun_alt, cos_incidence, areas, irradiance):
     out_power[out_power <= 0] = 0
 
     return out_power.sum(axis=1)
+
 
 def pystan_model(naive_obs_power, true_power, naive_for_power, eta):
     model = """
@@ -282,7 +282,7 @@ def pystan_model(naive_obs_power, true_power, naive_for_power, eta):
     """
 
     # All data is passed as MW quantities (power is the data to fit to)
-    dat = {'n_obs': true_power.shape[0], 
+    dat = {'n_obs': true_power.shape[0],
            'true_power': true_power,
            'naive_obs_power': naive_obs_power,
            'efficiency': eta,
@@ -291,40 +291,47 @@ def pystan_model(naive_obs_power, true_power, naive_for_power, eta):
 
     sm = pystan.StanModel(model_code=model)
 
-    return sm.sampling(data=dat, iter=30000, n_jobs=-1, control={'adapt_delta':0.95})
+    return sm.sampling(data=dat, iter=30000, n_jobs=-1, 
+                       control={'adapt_delta': 0.95})
 
 
 if __name__ == '__main__':
 
     # Train-test period definition
-    train_start = [datetime(2020, 3, 27, tzinfo=timezone.utc) + timedelta(days=d) for d in range(5)]
-    train_end = [datetime(2020, 4, 3, tzinfo=timezone.utc) + timedelta(days=d) for d in range(5)]
-
-    test_start = [datetime(2020, 4, 3, tzinfo=timezone.utc) + timedelta(days=d) for d in range(5)]
-    test_end = [datetime(2020, 4, 4, tzinfo=timezone.utc) + timedelta(days=d) for d in range(5)]
+    train_start = [datetime(2020, 3, 27, tzinfo=timezone.utc) +
+                   timedelta(days=d) for d in range(5)]
+    train_end = [datetime(2020, 4, 3, tzinfo=timezone.utc) +
+                 timedelta(days=d) for d in range(5)]
+    test_start = [datetime(2020, 4, 3, tzinfo=timezone.utc) +
+                  timedelta(days=d) for d in range(5)]
+    test_end = [datetime(2020, 4, 4, tzinfo=timezone.utc) +
+                timedelta(days=d) for d in range(5)]
 
     # Panels hyperparameters (efficiency and tilt)
     ETA = 0.162
     BETA = np.deg2rad(10)
 
     # Data is in UTC. Forecast data starts on April 2nd (10:15)
-    irradiance_observed = pd.read_csv('../cache/csv/observed_irradiance.csv', index_col=0)
+    irradiance_observed = pd.read_csv('../cache/csv/observed_irradiance.csv', 
+                                      index_col=0)
     irradiance_observed.index = pd.to_datetime(irradiance_observed.index)
 
-    irradiance_forecast = pd.read_csv('../cache/csv/forecast_irradiance.csv', index_col=0)
+    irradiance_forecast = pd.read_csv('../cache/csv/forecast_irradiance.csv', 
+                                      index_col=0)
     irradiance_forecast.index = pd.to_datetime(irradiance_forecast.index)
 
-    # WARNING: The corresponding Elia measures should have been cached beforehand (by calling 'cache_measures_between')
-    # from 'power.py'.
+    # WARNING: The corresponding Elia measures should have been cached 
+    # beforehand (by calling 'cache_measures_between') from 'cache/power.py'.
     elia = get_cached_measures('solar')
     elia = elia.groupby(by=elia.index // 1800).mean()
     elia.index *= 1800
-    elia.index = np.apply_along_axis(lambda l: [datetime.fromtimestamp(x, tz=timezone.utc) for x in l], 0, elia.index)
+    elia.index = np.apply_along_axis(lambda l: [datetime.fromtimestamp(x, tz=timezone.utc) for x in l], 
+                                     0, elia.index)
 
     elia['corrected'] = elia['corrected'].astype(float)
     elia['most_recent'] = elia['most_recent'].astype(float)
 
-    # Retrieve panels data    
+    # Retrieve panels data
     panels = pd.read_csv('../resources/csv/liege_province.csv')
 
     latitudes = np.deg2rad(np.array(panels['lat']))
@@ -332,86 +339,108 @@ if __name__ == '__main__':
     azimuth = np.deg2rad(np.array(panels['azimuth']))
     areas = np.array(panels['area'])
 
+    # Evaluation loop
     for START, END, START_FOR, END_FOR in zip(train_start, train_end, test_start, test_end):
 
         # Slice appropriate period
         obs_irradiance = irradiance_observed[START:END]
         for_irradiance = irradiance_forecast[START_FOR:END_FOR]
-        
-        # Divide Elia's production data into training data and forecast data and check for NaN
+
+        # Divide Elia's production data into training data and forecast data 
+        # and check for NaN
         train_elia = elia[(elia.index >= START) & (elia.index < END)].copy()
         if train_elia.isnull().values.any():
             train_elia.interpolate(inplace=True)
 
-        test_elia = elia[(elia.index >= START_FOR) & (elia.index < END_FOR)].copy()
+        test_elia = elia[(elia.index >= START_FOR) &
+                         (elia.index < END_FOR)].copy()
         if test_elia.isnull().values.any():
             test_elia.interpolate(inplace=True)
-        
+
         # Compute solar angles for the considered observed and forecast time series
-        time_series = pd.date_range(start=obs_irradiance.index[0], end=obs_irradiance.index[-1], freq='30T', closed=None) 
+        time_series = pd.date_range(start=obs_irradiance.index[0], 
+                                    end=obs_irradiance.index[-1], 
+                                    freq='30T', 
+                                    closed=None)
         sin_sun_alt, cos_incidence = compute_solar_angles(time_series, latitudes,
-                                                          longitudes, azimuth, 
+                                                          longitudes, azimuth,
                                                           BETA)
-        naive_obs_power = compute_out_power(sin_sun_alt, cos_incidence, areas, 
+        naive_obs_power = compute_out_power(sin_sun_alt, cos_incidence, areas,
                                             obs_irradiance)
 
-        time_series = pd.date_range(start=for_irradiance.index[0], end=for_irradiance.index[-1], freq='30T', closed=None)
+        time_series = pd.date_range(start=for_irradiance.index[0], 
+                                    end=for_irradiance.index[-1], 
+                                    freq='30T', 
+                                    closed=None)
         sin_sun_alt, cos_incidence = compute_solar_angles(time_series, latitudes,
-                                                          longitudes, azimuth, 
+                                                          longitudes, azimuth,
                                                           BETA)
         naive_for_power = compute_out_power(sin_sun_alt, cos_incidence, areas,
                                             for_irradiance)
 
         # Fit PyStan model on Elia's measures
-        fit = pystan_model(naive_obs_power / 1e6, train_elia['corrected'], naive_for_power / 1e6, ETA)
+        fit = pystan_model(naive_obs_power / 1e6,
+                           train_elia['corrected'], naive_for_power / 1e6, ETA)
         post_samples = fit.extract()
 
         # Retrieve predicted power and compute mean distribution (Watts)
         forecast_power = post_samples['for_power']
         mu_for = np.mean(forecast_power, axis=0)
         std_for = 3 * np.std(forecast_power, axis=0)
-        
-        # Performance assessment (remove nigth predictions) for naive and posterior models
+
+        # Performance assessment (remove nigth predictions) for naive and 
+        # posterior models
         elia_metric = test_elia[test_elia['corrected'] > 0]
         naive_metric = naive_for_power[(test_elia['corrected'] > 0).values] * ETA / 1e6
         mu_for_metric = mu_for[test_elia['corrected'] > 0]
-        
-        prior_MSE, prior_RMSE = compute_metrics(elia_metric['corrected'].values, naive_metric)
-        post_MSE, post_RMSE = compute_metrics(elia_metric['corrected'].values, mu_for_metric)
+
+        prior_MSE, prior_RMSE = compute_metrics(elia_metric['corrected'].values, 
+                                                naive_metric)
+        post_MSE, post_RMSE = compute_metrics(elia_metric['corrected'].values, 
+                                              mu_for_metric)
 
         # Performance assessment (remove nigth predictions) for Elia's predictions
         elia_pred = test_elia['most_recent'].astype('float64')
         elia_pred_metric = elia_pred[test_elia['corrected'] > 0]
-        elia_MSE, elia_RMSE = compute_metrics(elia_metric['corrected'], elia_pred_metric)
-        
+        elia_MSE, elia_RMSE = compute_metrics(elia_metric['corrected'], 
+                                              elia_pred_metric)
+
         # Comparison with baseline models
-        ## 1st baseline model: predict on day D+1 the measured production of day D
+        # 1st baseline model: predict on day D+1 the measured production of day D
         baseline_1 = elia[(elia.index >= START_FOR - timedelta(days=1)) & (elia.index < START_FOR)]
         baseline_1.index += timedelta(days=1)
         baseline_1.drop(baseline_1.index[~baseline_1.index.isin(test_elia.index)], inplace=True)
 
-        base_1_MSE, base_1_RMSE = compute_metrics(elia_metric['corrected'], baseline_1[test_elia['corrected'] > 0]['corrected'])
+        base_1_MSE, base_1_RMSE = compute_metrics(elia_metric['corrected'], 
+                                                  baseline_1[test_elia['corrected'] > 0]['corrected'])
 
-        ## 2nd baseline model: predict on day D+1 the average of the training days
+        # 2nd baseline model: predict on day D+1 the average of the training days
         baseline_2 = train_elia
         baseline_2['Hour'] = baseline_2.index.time
         baseline_2 = baseline_2.groupby('Hour').mean()
         baseline_2.drop(baseline_2.index[~baseline_2.index.isin(test_elia.index.time)], inplace=True)
         baseline_2.index = test_elia.index
-        
-        base_2_MSE, base_2_RMSE = compute_metrics(elia_metric['corrected'], baseline_2[test_elia['corrected'] > 0]['corrected'])
-        
+
+        base_2_MSE, base_2_RMSE = compute_metrics(elia_metric['corrected'], 
+                                                  baseline_2[test_elia['corrected'] > 0]['corrected'])
+
         # Write results.
         # WARNING: If the file already exists, it will append the computed metrics to that file.
-        metrics = np.array([[prior_MSE, prior_RMSE, post_MSE, post_RMSE, elia_MSE, elia_RMSE, base_1_MSE, base_1_RMSE, base_2_MSE, base_2_RMSE]])
-        with open('../products/txt/results_panelwise_april.txt','a') as f:
+        metrics = np.array([[prior_MSE, prior_RMSE, post_MSE, post_RMSE, elia_MSE,
+                             elia_RMSE, base_1_MSE, base_1_RMSE, base_2_MSE, base_2_RMSE]])
+        with open('../products/txt/results_panelwise_april.txt', 'a') as f:
             np.savetxt(f, metrics, delimiter=' ')
 
         # Compare all models
-        forecast_time_series = pd.date_range(start=for_irradiance.index[0], end=for_irradiance.index[-1], freq='30T', closed=None)
+        forecast_time_series = pd.date_range(start=for_irradiance.index[0], 
+                                             end=for_irradiance.index[-1], 
+                                             freq='30T', 
+                                             closed=None)
+        
         fig, ax = plt.subplots()
 
-        ax.fill_between(forecast_time_series, mu_for - std_for, mu_for + std_for, color="b", alpha=0.1)
+        ax.fill_between(forecast_time_series, mu_for - std_for,
+                        mu_for + std_for, color="b", alpha=0.1)
         ax.plot(forecast_time_series, naive_for_power * ETA / 1e6, color="k")
         ax.plot(forecast_time_series, mu_for, color="b")
         ax.plot(test_elia.index, test_elia['most_recent'], color="y")
@@ -422,10 +451,12 @@ if __name__ == '__main__':
         ax.set_xlabel('Time')
         ax.set_ylabel('Output power (MW)')
         fig.autofmt_xdate()
-        ax.legend(['Naive', 'Posterior $\pm$ 3std', 'Elia forecast', 'Elia measurements', 'D-1', 'Avg(D-7)'])
+        ax.legend(['Naive', 'Posterior $\pm$ 3std', 'Elia forecast',
+                   'Elia measurements', 'D-1', 'Avg(D-7)'])
 
         ax.grid()
         fig.tight_layout()
-        fig.savefig('../products/pdf/solar_panelwise (START_FOR {}).pdf'.format(START_FOR.strftime("%d-%m-%Y")), transparent=True)
+        fig.savefig('../products/pdf/solar_panelwise (START_FOR {}).pdf'.format(
+            START_FOR.strftime("%d-%m-%Y")), transparent=True)
 
         print("Predicted for {}".format(START_FOR.strftime("%d-%m-%Y")))

@@ -5,6 +5,8 @@ Two scripts can be executed to get an estimation of the solar power that will be
 - `solar_panelwise.py`: **estimate tomorrow's production** by computing a power curve for each panel installation detected by our panel enumerator.
 - `solar_provincial.py`: **estimate tomorrow's production** by computing a power curve directly for the whole province, using Elia's production measurements for the past 7 days to build a posterior predictive model.
 
+To evaluate the performance of the models on a given period, one can run `misc/solar_panelwise_eval.py` as well as `misc/solar_provincial_eval.py`.
+
 Both caches present in the computational flow can be updated using the following scripts:
 
 |                Cache | Script to use            |
