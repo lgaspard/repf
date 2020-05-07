@@ -394,8 +394,7 @@ def solar_panelwise():
     if train_elia.isnull().values.any():
         train_elia.interpolate(inplace=True)
 
-    elia_forecast = elia[(elia.index >= START_FOR) &
-                         (elia.index < END_FOR)].copy()
+    elia_forecast = elia[(elia.index >= START_FOR) & (elia.index < END_FOR)].copy()
     if elia_forecast.isnull().values.any():
         elia_forecast.interpolate(inplace=True)
 

@@ -19,31 +19,29 @@ forecast_provincial, lower_provincial, upper_provincial, elia_forecast = solar_p
 if os.path.isfile('../products/csv/solar_forecast.csv'):
     results = pd.read_csv('../products/csv/solar_forecast.csv',
                           index_col='timestamp')
+    results.index = pd.DatetimeIndex(results.index)
 
     yesterday = date.today() - timedelta(days=1)
 
     # Retrieve measurments of yesterday
-    measured = get_power_between('solar', yesterday, yesterday)
+    measured = None
     while measured is None:
         measured = get_power_between('solar', yesterday, yesterday)
 
     measured = measured['measured'].groupby(measured.index // 1800).mean()
     measured.index *= 1800
-    measured.index = np.apply_along_axis(lambda l: [datetime.fromtimestamp(x, tz=timezone.utc) for x in l],
-                                         0, measured.index)
+    measured.index = [datetime.fromtimestamp(x, tz=timezone.utc) for x in measured.index]
+    measured.index = measured.index - timedelta(minutes=15)
 
-    if set(measured.index).issubset(set(results.index)):
-        results.loc[measured.index, 'measured'] = measured
+    # isin
+    isin = measured.index.isin(results.index)
+    results.loc[measured[isin].index, 'measured'] = measured[isin]
 else:
-    results = pd.DataFrame(columns=['measured', 'forecast_panelwise', 
-    								'lower_panelwise','upper_panelwise', 
-    								'forecast_provincial', 'lower_provincial',
+    results = pd.DataFrame(columns=['measured', 'forecast_panelwise', 'forecast_provincial', 'lower_provincial',
                                     'upper_provincial', 'elia_forecast'])
 
 new_results = pd.DataFrame({
     'forecast_panelwise': forecast_panelwise,
-    'lower_panelwise': lower_panelwise,
-    'upper_panelwise': upper_panelwise,
     'forecast_provincial': forecast_provincial,
     'lower_provincial': lower_provincial,
     'upper_provincial': upper_provincial,
@@ -53,5 +51,4 @@ new_results = pd.DataFrame({
 results = results.append(new_results, sort=False)
 results = results[~results.index.duplicated(keep='first')]
 
-results.to_csv('../products/csv/solar_forecast.csv',
-               index=True, index_label='timestamp')
+results.to_csv('../products/csv/solar_forecast.csv', index=True, index_label='timestamp')
