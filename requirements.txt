@@ -1,0 +1,14 @@
+numpy
+pandas
+scipy
+matplotlib
+scikit-learn
+pytz
+requests
+bs4
+jupyter
+latex
+cython
+scikit-garden
+pvlib
+pystan
