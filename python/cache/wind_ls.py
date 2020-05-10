@@ -70,7 +70,7 @@ def cache_learning_set(show_na=True, test_set=False, end=None,
         ax.xaxis.tick_top()
         ax.xaxis.set_label_position('top')
         plt.tight_layout()
-        plt.savefig(PLOT_PATH + 'na.pdf')
+        plt.savefig(PLOT_PATH + 'na.pdf', transparent=True)
         plt.show()
 
     # Drop rows with missing values

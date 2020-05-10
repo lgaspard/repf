@@ -27,5 +27,5 @@ if __name__ == '__main__':
     ax.set_xlabel('Mean wind speed')
     ax.set_ylabel('Power')
     plt.tight_layout()
-    plt.savefig('../products/pdf/wallonia_power_curve.pdf')
+    plt.savefig('../products/pdf/wallonia_power_curve.pdf', transparent=True)
     plt.show()

@@ -132,8 +132,9 @@ if __name__ == '__main__':
             power = [model(w) for w in wind]
             ax.plot(wind, power)
             plt.tight_layout()
-            plt.savefig('../products/pdf/pc_{}.pdf'.format('_'.join(ref)))
-            plt.close(sfig)
+            plt.savefig('../products/pdf/pc_{}.pdf'.format('_'.join(ref)),
+                        transparent=True)
+            plt.close(fig)
 
     # Compute the total power for the considered date range
     power = 0
