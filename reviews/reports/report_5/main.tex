@@ -83,7 +83,7 @@ As for the previous section, we decided to compare our prior and posterior model
 Again, we see that our posterior model performs way better than our prior model. Nevertheless, this time, we see that the baseline models perform even with our posterior model. This can be explained by taking a glance at the measures made by Elia for the considered forecast period. Indeed, by looking at Figure \ref{fig:prior_model}, we see that Elia's measurements are quite the same throughout the forecast period. Hence, in that case, taking the measured production of the previous day/the average over the last 7 days is indeed a good approximation.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{resources/pdf/province_naive (03-04-2020).pdf}
+    \includegraphics[width=\textwidth]{resources/pdf/province_naive_03-04-2020.pdf}
     \noskipcaption{Comparison between Elia's measurements and the prior model (using irradiance measurements).}
     \label{fig:prior_model}
 \end{figure}
@@ -92,19 +92,19 @@ We can verify that by looking at the prediction made for April 5\up{th}, depicte
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{resources/pdf/comparison_naive_posterior (29-03-2020).pdf}
+    \includegraphics[width=\textwidth]{resources/pdf/comparison_naive_posterior_29-03-2020.pdf}
     \noskipcaption{Comparison between the naive predictive model and the posterior predictive model (April 5\up{th}).}
     \label{fig:naive_posterior_5_april}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{resources/pdf/baseline_1 (29-03-2020).pdf}
+    \includegraphics[width=\textwidth]{resources/pdf/baseline_1_29-03-2020.pdf}
     \noskipcaption{Comparison between the first baseline ($D-1$) and Elia's measures (April 5\up{th}).}
     \label{fig:base_1_elia_5_april}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{resources/pdf/baseline_2 (29-03-2020).pdf}
+    \includegraphics[width=\textwidth]{resources/pdf/baseline_2_29-03-2020.pdf}
     \noskipcaption{Comparison between the second baseline (average) and Elia's measures (April 5th).}
     \label{fig:base_2_elia_5_april}
 \end{figure}
@@ -112,19 +112,19 @@ Situations where the baseline models perform slightly better than the posterior 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{resources/pdf/comparison_naive_posterior (27-03-2020).pdf}
+    \includegraphics[width=\textwidth]{resources/pdf/comparison_naive_posterior_27-03-2020.pdf}
     \noskipcaption{Comparison between the naive predictive model and the posterior predictive model (April 3rd).}
     \label{fig:naive_posterior_3_april}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{resources/pdf/baseline_1 (27-03-2020).pdf}
+    \includegraphics[width=\textwidth]{resources/pdf/baseline_1_27-03-2020.pdf}
     \noskipcaption{Comparison between the first baseline ($D-1$) and Elia's measures (April 3rd).}
     \label{fig:base_1_elia_3_april}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{resources/pdf/baseline_2 (27-03-2020).pdf}
+    \includegraphics[width=\textwidth]{resources/pdf/baseline_2_27-03-2020.pdf}
     \noskipcaption{Comparison between the second baseline (average) and Elia's measures (April 3rd).}
     \label{fig:base_2_elia_3_april}
 \end{figure}
@@ -132,7 +132,7 @@ Situations where the baseline models perform slightly better than the posterior 
 We thus see that introducing irradiance forecast measures yields less precise models than those previously obtained, yet still reasonable. We can compare this with what we would have obtained for April 3\up{rd} using the measured irradiance instead of the forecast. The resulting posterior model can be seen on Figure \ref{fig:naive_post_meas}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{resources/pdf/comparison_naive_posterior (27-03-2020)_meas.pdf}
+    \includegraphics[width=\textwidth]{resources/pdf/comparison_naive_posterior_27-03-2020_meas.pdf}
     \noskipcaption{Comparison between the naive predictive model and the posterior predictive model (April 3\up{rd}) using the measurements.}
     \label{fig:naive_post_meas}
 \end{figure}
