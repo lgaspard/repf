@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<!-- Title -->
+	<title>Renewable energy production forecast</title>
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="François Rozet">
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+	<link rel="stylesheet" href="resources/css/blog.css">
+	<style type="text/css"> /* Chart.js */
+		@keyframes chartjs-render-animation	{
+			from {
+				opacity: .99}
+			to {
+				opacity: 1
+			}
+		}.chartjs-render-monitor {
+			animation:chartjs-render-animation 1ms
+		}
+	</style>
+	<style type="text/css"> /* Default */
+		*:last-child {
+			margin-bottom: 0;
+		}
+
+		iframe {
+			border: none;
+		}
+
+		.relative {
+			position: relative;
+		}
+
+		.absolute {
+			position: absolute;
+		}
+
+		.square {
+			width: 100%;
+			position: relative;
+		}
+
+		.square:after {
+			content: '';
+			display: block;
+			padding-bottom: 100%;
+		}
+	</style>
+	<!-- Scripts -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+	<script src="resources/js/colors.js"></script>
+</head>
+
+<body>
+	<div class="p-3 container">
+		<header class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+			<h1 class="font-italic">Renewable energy production forecast</h1>
+			<h2 class="font-italic">in the province of Liège</h2>
+			<p class="lead mt-3">Nowadays, renewable energies, such as wind and solar power, are playing an increasingly important role in the global production of electrical energy.</p>
+			<p class="lead">Unfortunately, these new energy sources are very dependent on the weather and time conditions. Therefore, it is sometimes hard to forecast their production and, consequently, to adapt adequately the non-renewable sources production, such as nuclear centrals.</p>
+			<p class="lead">As its name suggests, this project aimed at forecasting, as accurately as possible, the renewable energy production in the province of Liège. This website showcases the final results.</p>
+			<p class="lead">Project realized by <b>Yann Claes</b>, <b>Gaspard Lambrechts</b> and <b>François Rozet</b>.</p>
+			<p class="lead">Under the direction of <b>Bertrand Cornelusse</b>, <b>Pierre Geurts</b> and <b>Gilles Louppe</b>.</p>
+		</header>
+	</div>
+
+	<main role="main" class="p-3 container">
+		<div class="row">
+			<div class="col-md-8 blog-main">
+				<div class="blog-post">
+					<h2 class="blog-post-title">Solar power</h2>
+					<p class="blog-post-meta">May 04, 2020</p>
+					<p>The major strength of photovoltaic panels is that anyone owning a roof or an open parcel of land can potentially install photovoltaic panels. But their strength is also their main drawback as it is quite hard to assess their geographical deployment and, therefore, their impact on the electrical grid.</p>
+					<h3>Photovoltaic panels mapping</h3>
+					<p>In order to predict the photovoltaic panels production, we tried to localize every photovoltaic installation in the province of Liège. To reach this goal, we built and trained a <b>deep neural network</b> to detect and delimit photovoltaic panels on orthorectified aerial images.</p>
+					<p>The dataset we used for training was the free of access <a href="https://www.nature.com/articles/sdata2016106">Distributed Solar Photovoltaic Array Location and Extent Data Set for Remote Sensing Object Identification</a>.</p>
+					<p>Finally, we detected the panels in the province of Liège using the <a href="https://geoportail.wallonie.be/walonmap">WalOnMap</a> orthorectified images.</p>
+					<div class="square mb-3">
+						<iframe src="https://francois-rozet.github.io/adopptrs/" class="absolute" height="100%" width="100%"></iframe>
+					</div>
+					<h3 class="mt-4">Photovoltaic production forecast</h3>
+					<p>We built two models to estimate the photovoltaic production of the province of Liège.</p>
+					<ol class="pl-4">
+						<li><p>The first one uses the data computed by our photovoltaic panels mapping (location, area and surface azimuth) and irradiance forecasts to estimate the total output power, using a <a href="https://github.com/stan-dev/pystan">PyStan</a> probabilistic program.</p></li>
+						<li><p>The second model does not use any panel data and relies on a simple equation (using irradiance forecasts) plugged into a PyStan program to estimate the output power.</p></li>
+					</ol>
+					<div class="relative">
+						<canvas class="w-100 chartjs-render-monitor" id="solarChart"></canvas>
+						<div class="absolute" style="top: 0.5em; right: 0.5em;">
+							<button type="button" class="btn btn-secondary btn-sm" aria-label="previous" id="solarPrev">
+								<i class="fas fa-long-arrow-alt-left fa-lg"></i>
+							</button>
+							<button type="button" class="btn btn-secondary btn-sm" aria-label="next" id="solarNext">
+								<i class="fas fa-long-arrow-alt-right fa-lg"></i>
+							</button>
+						</div>
+					</div>
+					<p>The irradiance data used is retrieved from <a href="https://solcast.com/">Solcast's API</a>, and we use <a href="https://www.elia.be/en/grid-data/power-generation/solar-pv-power-generation-data">Elia's PV production measurements</a> to fit on.</p>
+				</div>
+				<div class="blog-post">
+					<h2 class="blog-post-title">Wind power</h2>
+					<p class="blog-post-meta">May 06, 2020</p>
+					<p>In Belgium, wind power is the <code>3<sup>rd</sup></code> most important electricity production source. Unfortunately, it is also the most variable source, as there are numerous factors that influence the wind speed and direction. As a consequence, forecasting the wind farms production isn't an easy task.</p>
+					<h3 class="mt-4">Wind farms production forecast</h3>
+					<p>In this section, we aimed at forecasting the total wind power in Wallonia based on weather predictions.</p>
+					<p>The model that is showcased here, uses a supervised learning method based on <i>gradient boosting</i>. It is constituted of 3 underlying models :</p>
+					<ol class="pl-4">
+						<li><p>A <code>10<sup>th</sup></code> percentile gradient boosting;</p></li>
+						<li><p>A least-square gradient boosting;</p></li>
+						<li><p>A <code>90<sup>th</sup></code> percentile gradient boosting.</p></li>
+					</ol>
+					<div class="relative">
+						<canvas class="w-100 chartjs-render-monitor" id="windChart"></canvas>
+						<div class="absolute" style="top: 0.5em; right: 0.5em;">
+							<button type="button" class="btn btn-secondary btn-sm" aria-label="previous" id="windPrev">
+								<i class="fas fa-long-arrow-alt-left fa-lg"></i>
+							</button>
+							<button type="button" class="btn btn-secondary btn-sm" aria-label="next" id="windNext">
+								<i class="fas fa-long-arrow-alt-right fa-lg"></i>
+							</button>
+						</div>
+					</div>
+					<p>These three models have been trained from a learning set constituted of the wind speeds and maximum wind gusts observed at the <code>67</code> wind farms of Wallonia, together with the total wind power produced in Wallonia. See <a class="link" target="_blank" href="https://darksky.net/dev">Dark Sky API</a> and <a class="link" target="_blank" href="https://www.elia.be/en/grid-data/power-generation/wind-power-generation">Elia's wind power data</a>.</p>
+					<p><i>Note.</i> An alternative based on <i>extra trees</i> has also been developped, yielding more coherent quantiles, at the cost of a heavier model.
+				</div>
+			</div>
+			<aside class="col-md-4 blog-sidebar">
+				<div class="p-4 mb-3">
+					<div class="row text-center">
+						<div class="my-auto col-6">
+							<h4 class="mb-0">Liège</h4>
+							<p class="text-muted">Belgium</p>
+						</div>
+						<div class="my-auto col-6">
+							<img id="weatherIcon">
+						</div>
+						<div class="my-auto col-6">
+							<h4 class="mb-0"><span id="weatherTemp"></span> °C</h4>
+							<p class="text-muted">Temperature</p>
+						</div>
+						<div class="my-auto col-6">
+							<h4 class="mb-0"><span id="weatherWind"></span> m/s</h4>
+							<p class="text-muted">Wind speed</p>
+						</div>
+					</div>
+				</div>
+				<div class="p-4 mb-3 bg-light rounded">
+					<h4 class="font-italic">Photovoltaic panels</h4>
+					<p>We estimated there is <code>65.463</code> photovoltaic installations covering <code>2.554.505 m<sup>2</sup></code> in the province of Liège.</p>
+					<p>The average Belgian photovoltaic peak power being about <code>133 Wp/m<sup>2</sup></code>, the total photovoltaic power of the province of Liège should be to the order of <code>340 MWp</code>.</p>
+				</div>
+				<div class="p-4 mb-3">
+					<h4 class="font-italic mb-3">Did you know ?</h4>
+					<p>The first solar panel cell was invented in <code>1941</code> by <b>Russell Ohl</b>.</p>
+				</div>
+				<div class="p-4 mb-3 bg-light rounded">
+					<h4 class="font-italic">Wind farms</h4>
+					<p>In Wallonia, there were <code>67</code> wind farms in activity by the end of <code>2019</code>, for a total of <code>400</code> wind turbines referenced by the <a href="https://energie.wallonie.be/">SPW Energie</a>.</p>
+					<p>The highest wind power production observed in Wallonia in <code>2019</code> was <code>727 MW</code>.</p>
+				</div>
+				<div class="p-4 mb-3">
+					<h4 class="font-italic mb-3">Did you know ?</h4>
+					<p>Wind turbines can be as tall as <code>200 m</code> and the extremity of their blades that can move at a speed of up to <code>300 km/h</code>.</p>
+				</div>
+			</aside>
+		</div>
+	</main>
+
+	<!-- Scripts -->
+	<script type="text/javascript"> // Liège Weather
+		const apiKey = '122fce3980a72e5ed2619361a9be7cb5';
+		const city = 'Liège';
+		const url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey + '&units=metric';
+
+		fetch(url)
+		.then(response => response.json())
+		.then(data => {
+			const { main, weather, wind } = data;
+			const icon = 'https://openweathermap.org/img/wn/' + weather[0].icon + '@2x.png';
+
+			document.getElementById('weatherIcon').src = icon;
+			document.getElementById('weatherTemp').innerHTML = main.temp;
+			document.getElementById('weatherWind').innerHTML = wind.speed;
+		});
+	</script>
+	<script type="text/javascript"> // Solar production forecast
+		// Chart configuration
+		var solarConfig = {
+			type: 'line',
+			data: {
+				labels: [],
+				datasets: [
+					{
+						label: 'Measure',
+						fill: false,
+						backgroundColor: colors.orange,
+						borderColor: colors.orange,
+						data: []
+					},
+					{
+						label: 'Forecast 1',
+						fill: false,
+						backgroundColor: colors.teal,
+						borderColor: colors.teal,
+						data: []
+					},
+					{
+						label: 'Forecast 2',
+						fill: false,
+						backgroundColor: colors.blue,
+						borderColor: colors.blue,
+						data: []
+					},
+					{
+						label: 'Lower bound 2',
+						fill: "-1",
+						backgroundColor: Color(colors.blue).alpha(0.25).rgbString(),
+						borderColor: colors.blue,
+						data: [],
+						pointRadius: 0,
+						borderWidth: 0
+					},
+					{
+						label: 'Upper bound 2',
+						fill: "-2",
+						backgroundColor: Color(colors.blue).alpha(0.25).rgbString(),
+						borderColor: colors.blue,
+						data: [],
+						pointRadius: 0,
+						borderWidth: 0
+					},
+					{
+						label: 'Elia\'s forecast',
+						fill: false,
+						backgroundColor: colors.green,
+						borderColor: colors.green,
+						data: []
+					}
+				]
+			},
+			options: {
+				responsive: true,
+				title: {
+					display: true,
+					position: 'bottom',
+					text: 'PV panels production forecast'
+				},
+				tooltips: {
+					mode: 'index',
+					intersect: false,
+				},
+				hover: {
+					mode: 'nearest',
+					intersect: true
+				},
+				scales: {
+					xAxes: [{
+						type: 'time',
+						time: {
+							unit: 'day'
+						},
+						ticks : {}
+					}],
+					yAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Production [MW]'
+						}
+					}]
+				},
+				aspectRatio: 1.618
+			}
+		};
+
+		// Parse CSV data
+		Papa.parse('products/csv/solar_forecast.csv', {
+			download: true,
+			complete: function(results) {
+				forecast = results.data.slice(1);
+
+				while (forecast[forecast.length - 1].length == 1) {
+					forecast.pop();
+				}
+
+				forecast.forEach(function (value) {
+					solarConfig.data.labels.push(moment(value[0]));
+
+					for (i = 0; i < 6; ++i) {
+						solarConfig.data.datasets[i].data.push(parseFloat(value[i + 1]).toFixed(2));
+					}
+				});
+
+				solarConfig.options.scales.xAxes[0].ticks.min = solarConfig.data.labels[forecast.length - 1].clone().subtract(2, 'day');
+				solarConfig.options.scales.xAxes[0].ticks.max = solarConfig.data.labels[forecast.length - 1].clone();
+
+				solarContext = document.getElementById('solarChart').getContext('2d');
+				window.solarChart = new Chart(solarContext, solarConfig);
+
+				delete forecast;
+			},
+			config: {
+				skipEmptyLines: true
+			}
+		});
+
+		document.getElementById('solarPrev').addEventListener('click', function() {
+			solarConfig.options.scales.xAxes[0].ticks.min = moment(solarConfig.options.scales.xAxes[0].ticks.min).subtract(1, 'day');
+			solarConfig.options.scales.xAxes[0].ticks.max = moment(solarConfig.options.scales.xAxes[0].ticks.max).subtract(1, 'day');
+			solarChart.update();
+		});
+
+		document.getElementById('solarNext').addEventListener('click', function() {
+			solarConfig.options.scales.xAxes[0].ticks.min = moment(solarConfig.options.scales.xAxes[0].ticks.min).add(1, 'day');
+			solarConfig.options.scales.xAxes[0].ticks.max = moment(solarConfig.options.scales.xAxes[0].ticks.max).add(1, 'day');
+			solarChart.update();
+		});
+	</script>
+	<script type="text/javascript"> // Windfarms production forecast
+		// Chart configuration
+		var windConfig = {
+			type: 'line',
+			data: {
+				labels: [],
+				datasets: [
+					{
+						label: 'Measure',
+						fill: false,
+						backgroundColor: colors.orange,
+						borderColor: colors.orange,
+						data: []
+					},
+					{
+						label: 'Forecast',
+						fill: false,
+						backgroundColor: colors.blue,
+						borderColor: colors.blue,
+						data: []
+					},
+					{
+						label: '10th percentile',
+						fill: "-1",
+						backgroundColor: Color(colors.blue).alpha(0.25).rgbString(),
+						borderColor: colors.blue,
+						data: [],
+						pointRadius: 0,
+						borderWidth: 0
+					},
+					{
+						label: '90th percentile',
+						fill: "-2",
+						backgroundColor: Color(colors.blue).alpha(0.25).rgbString(),
+						borderColor: colors.blue,
+						data: [],
+						pointRadius: 0,
+						borderWidth: 0
+					},
+					{
+						label: 'Elia\'s forecast',
+						fill: false,
+						backgroundColor: colors.green,
+						borderColor: colors.green,
+						data: []
+					}
+				]
+			},
+			options: {
+				responsive: true,
+				title: {
+					display: true,
+					position: 'bottom',
+					text: 'Windfarms production forecast'
+				},
+				tooltips: {
+					mode: 'index',
+					intersect: false,
+				},
+				hover: {
+					mode: 'nearest',
+					intersect: true
+				},
+				scales: {
+					xAxes: [{
+						type: 'time',
+						time: {
+							unit: 'day'
+						},
+						ticks : {}
+					}],
+					yAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Production [MW]'
+						}
+					}]
+				},
+				aspectRatio: 1.618
+			}
+		};
+
+		// Parse CSV data
+		Papa.parse('products/csv/wind_forecast.csv', {
+			download: true,
+			complete: function(results) {
+				forecast = results.data.slice(1);
+
+				while (forecast[forecast.length - 1].length == 1) {
+					forecast.pop();
+				}
+
+				forecast.forEach(function (value) {
+					windConfig.data.labels.push(moment(value[0]));
+
+					for (i = 0; i < 5; ++i) {
+						windConfig.data.datasets[i].data.push(parseFloat(value[i + 1]).toFixed(2));
+					}
+				});
+
+				windConfig.options.scales.xAxes[0].ticks.min = windConfig.data.labels[forecast.length - 1].clone().subtract(2, 'day');
+				windConfig.options.scales.xAxes[0].ticks.max = windConfig.data.labels[forecast.length - 1].clone();
+
+				windContext = document.getElementById('windChart').getContext('2d');
+				window.windChart = new Chart(windContext, windConfig);
+
+				delete forecast;
+			},
+			config: {
+				skipEmptyLines: true
+			}
+		});
+
+		document.getElementById('windPrev').addEventListener('click', function() {
+			windConfig.options.scales.xAxes[0].ticks.min = moment(windConfig.options.scales.xAxes[0].ticks.min).subtract(1, 'day');
+			windConfig.options.scales.xAxes[0].ticks.max = moment(windConfig.options.scales.xAxes[0].ticks.max).subtract(1, 'day');
+			windChart.update();
+		});
+
+		document.getElementById('windNext').addEventListener('click', function() {
+			windConfig.options.scales.xAxes[0].ticks.min = moment(windConfig.options.scales.xAxes[0].ticks.min).add(1, 'day');
+			windConfig.options.scales.xAxes[0].ticks.max = moment(windConfig.options.scales.xAxes[0].ticks.max).add(1, 'day');
+			windChart.update();
+		});
+	</script>
+</body>
+
+</html>
