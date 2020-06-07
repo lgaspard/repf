@@ -6,6 +6,8 @@ Unfortunately, these new energy sources are very dependent on the weather and ti
 
 As its name suggests, this project aimed at forecasting, as accurately as possible, the renewable energy production in the province of Liège.
 
+The results are showcased at [lgaspard.github.io/repf](https://lgaspard.github.io/repf/).
+
 Project realized by *Yann Claes*, *Gaspard Lambrechts* and *François Rozet*.
 
 Under the direction of *Bertrand Cornelusse*, *Pierre Geurts* and *Gilles Louppe*.
